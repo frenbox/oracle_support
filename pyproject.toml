@@ -9,7 +9,9 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "oracle @ git+https://github.com/dev-ved30/Oracle.git@new_arch",
-    "graphviz (==0.20.3)"
+    "graphviz (==0.20.3)",
+    "confluent-kafka (>=2.12.2,<3.0.0)",
+    "fastavro (>=1.12.1,<2.0.0)"
 ]
 
 [tool.poetry]
