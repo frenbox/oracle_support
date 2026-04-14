@@ -1,0 +1,20 @@
+[project]
+name = "oracle-support"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "frenbox",email = "frenbox.ss@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "oracle @ git+https://github.com/dev-ved30/Oracle.git@new_arch",
+    "graphviz (==0.20.3)"
+]
+
+[tool.poetry]
+packages = [{include = "oracle_support", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
