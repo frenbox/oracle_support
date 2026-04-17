@@ -1,2459 +1,2332 @@
 {
-  "_id": "ZTF26aasktra",
+  "_id": "ZTF26aarabyi",
   "prv_candidates": [
     {
-      "jd": 2461142.7089005,
-      "fid": 1,
+      "jd": 2461134.7407292,
+      "fid": 3,
       "pid": {
-        "$numberLong": "3388208906315"
+        "$numberLong": "3380240722915"
       },
-      "diffmaglim": 20.137500762939453,
-      "programpi": "Prince",
-      "programid": 3,
+      "diffmaglim": 19.24100685119629,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
       "candid": {
-        "$numberLong": "3388208906315015013"
+        "$numberLong": "3380240722915015011"
       },
       "isdiffpos": true,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "ra": 157.9423683,
-      "dec": -7.6684231,
-      "magpsf": 19.917699813842773,
-      "sigmapsf": 0.20333600044250488,
-      "chipsf": 0.9550579786300659,
-      "magap": 19.535999298095703,
-      "sigmagap": 0.18359999358654022,
-      "distnr": 17.680099487304688,
-      "magnr": 21.788999557495117,
-      "sigmagnr": 0.23199999332427979,
-      "chinr": 0.8899999856948853,
-      "sharpnr": 0.02199999988079071,
-      "sky": -0.5853530168533325,
-      "fwhm": 2.880000114440918,
-      "mindtoedge": 533.9019775390625,
-      "seeratio": 1.0644299983978271,
-      "aimage": 1.2580000162124634,
-      "bimage": 0.8960000276565552,
-      "elong": 1.4040199518203735,
-      "nneg": 5,
+      "nid": 3380,
+      "rcid": 29,
+      "field": 468,
+      "ra": 147.8024,
+      "dec": 4.153344,
+      "magpsf": 16.56389617919922,
+      "sigmapsf": 0.091704361140728,
+      "chipsf": 22.37507438659668,
+      "magap": 16.465599060058594,
+      "sigmagap": 0.024299999698996544,
+      "distnr": 13.747621536254883,
+      "magnr": 20.951000213623047,
+      "sigmagnr": 0.1599999964237213,
+      "chinr": 1.6109999418258667,
+      "sharpnr": -0.0729999989271164,
+      "sky": 0.8054003119468689,
+      "fwhm": 3.490000009536743,
+      "mindtoedge": 867.1220703125,
+      "seeratio": 0.9454739093780518,
+      "aimage": 1.2450000047683716,
+      "bimage": 1.0670000314712524,
+      "elong": 1.166822910308838,
+      "nneg": 0,
       "nbad": 0,
-      "rb": 0.191429004073143,
-      "ssdistnr": 2,
-      "ssmagnr": 19.600000381469727,
-      "ssnamenr": "263135",
-      "ranr": 157.9404146,
-      "decnr": -7.6730033,
-      "scorr": 9.18916,
-      "magzpsci": 26.222700119018555,
-      "psfFlux": 39166963712,
-      "psfFluxErr": 7335165440,
-      "snr_psf": 5.339615821838379,
-      "apFlux": 55667294208,
-      "apFluxErr": 9413442560,
-      "snr_ap": 5.913595676422119,
-      "band": "g"
-    },
-    {
-      "jd": 2461142.709375,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388209376315"
-      },
-      "diffmaglim": 20.13089942932129,
-      "programpi": "Prince",
-      "programid": 3,
-      "candid": {
-        "$numberLong": "3388209376315015009"
-      },
-      "isdiffpos": true,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "ra": 157.942239,
-      "dec": -7.6682997,
-      "magpsf": 20.08679962158203,
-      "sigmapsf": 0.21266500651836395,
-      "chipsf": 1.1795899868011475,
-      "magap": 19.743600845336914,
-      "sigmagap": 0.22390000522136688,
-      "distnr": 17.597900390625,
-      "magnr": 22.150999069213867,
-      "sigmagnr": 0.3440000116825104,
-      "chinr": 1.0219999551773071,
-      "sharpnr": 0.07699999958276749,
-      "sky": -0.4043000042438507,
-      "fwhm": 2.490000009536743,
-      "mindtoedge": 534.2470092773438,
-      "seeratio": 1.2303099632263184,
-      "aimage": 1.184999942779541,
-      "bimage": 1.0820000171661377,
-      "elong": 1.0951900482177734,
-      "nneg": 5,
-      "nbad": 0,
-      "rb": 0.29714301228523254,
-      "ssdistnr": 2,
-      "ssmagnr": 19.600000381469727,
-      "ssnamenr": "263135",
-      "ranr": 157.9381786,
-      "decnr": -7.6711808,
-      "scorr": 7.92341,
-      "magzpsci": 26.223800659179688,
-      "psfFlux": 33518145536,
-      "psfFluxErr": 6565257216,
-      "snr_psf": 5.105381965637207,
-      "apFlux": 45979000832,
-      "apFluxErr": 9481768960,
-      "snr_ap": 4.84920072555542,
-      "band": "g"
-    },
-    {
-      "jd": 2461142.7098495,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388209846315"
-      },
-      "diffmaglim": 20.21310043334961,
-      "programpi": "Prince",
-      "programid": 3,
-      "candid": {
-        "$numberLong": "3388209846315015012"
-      },
-      "isdiffpos": true,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "ra": 157.9421926,
-      "dec": -7.6682612,
-      "magpsf": 20.225799560546875,
-      "sigmapsf": 0.22624899446964264,
-      "chipsf": 0.966284990310669,
-      "magap": 19.73889923095703,
-      "sigmagap": 0.2160000056028366,
-      "distnr": 17.545700073242188,
-      "magnr": 22.150999069213867,
-      "sigmagnr": 0.3440000116825104,
-      "chinr": 1.0219999551773071,
-      "sharpnr": 0.07699999958276749,
-      "sky": -0.5603929758071899,
-      "fwhm": 3.319999933242798,
-      "mindtoedge": 534.322998046875,
-      "seeratio": 0.8833990097045898,
-      "aimage": 1.1519999504089355,
-      "bimage": 0.7940000295639038,
-      "elong": 1.4508800506591797,
-      "nneg": 3,
-      "nbad": 0,
-      "rb": 0.13857099413871765,
-      "ssdistnr": 2,
-      "ssmagnr": 19.600000381469727,
-      "ssnamenr": "263135",
-      "ranr": 157.9381786,
-      "decnr": -7.6711808,
-      "scorr": 7.48378,
-      "magzpsci": 26.223800659179688,
-      "psfFlux": 29490360320,
-      "psfFluxErr": 6145290752,
-      "snr_psf": 4.798855304718018,
-      "apFlux": 46178537472,
-      "apFluxErr": 9186913280,
-      "snr_ap": 5.026556015014648,
-      "band": "g"
-    },
-    {
-      "jd": 2461142.7103125,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388210316315"
-      },
-      "diffmaglim": 20.160400390625,
-      "programpi": "Prince",
-      "programid": 3,
-      "candid": {
-        "$numberLong": "3388210316315015014"
-      },
-      "isdiffpos": true,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "ra": 157.9422778,
-      "dec": -7.6682326,
-      "magpsf": 19.874900817871094,
-      "sigmapsf": 0.1548669934272766,
-      "chipsf": 1.1957000494003296,
-      "magap": 19.941200256347656,
-      "sigmagap": 0.26460000872612,
-      "distnr": 17.847900390625,
-      "magnr": 22.150999069213867,
-      "sigmagnr": 0.3440000116825104,
-      "chinr": 1.0219999551773071,
-      "sharpnr": 0.07699999958276749,
-      "sky": -0.5819349884986877,
-      "fwhm": 3.309999942779541,
-      "mindtoedge": 534.6290283203125,
-      "seeratio": 0.9129830002784729,
-      "aimage": 0.9279999732971191,
-      "bimage": 0.8550000190734863,
-      "elong": 1.085379958152771,
-      "nneg": 1,
-      "nbad": 0,
-      "rb": 0.5928570032119751,
-      "ssdistnr": 2,
-      "ssmagnr": 19.600000381469727,
-      "ssnamenr": "263135",
-      "ranr": 157.9381786,
-      "decnr": -7.6711808,
-      "scorr": 9.74772,
-      "magzpsci": 26.223899841308594,
-      "psfFlux": 40741740544,
-      "psfFluxErr": 5811311104,
-      "snr_psf": 7.010765552520752,
-      "apFlux": 38328324096,
-      "apFluxErr": 9340827648,
-      "snr_ap": 4.103311061859131,
-      "band": "g"
-    },
-    {
-      "jd": 2461142.710787,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388210786315"
-      },
-      "diffmaglim": 20.163448333740234,
-      "programpi": "Prince",
-      "programid": 3,
-      "candid": {
-        "$numberLong": "3388210786315015009"
-      },
-      "isdiffpos": true,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "ra": 157.9421588,
-      "dec": -7.6680767,
-      "magpsf": 19.891538619995117,
-      "sigmapsf": 0.20051974058151245,
-      "chipsf": 1.2720085382461548,
-      "magap": 19.680700302124023,
-      "sigmagap": 0.2084999978542328,
-      "distnr": 17.848791122436523,
-      "magnr": 22.1510009765625,
-      "sigmagnr": 0.3440000116825104,
-      "chinr": 1.0219999551773071,
-      "sharpnr": 0.07699999958276749,
-      "sky": -0.756556510925293,
-      "fwhm": 3.569999933242798,
-      "mindtoedge": 535.0604858398438,
-      "seeratio": 0.8447328209877014,
-      "aimage": 1.0950000286102295,
-      "bimage": 1.0379999876022339,
-      "elong": 1.0549132823944092,
-      "nneg": 2,
-      "nbad": 0,
-      "rb": 0.43857142329216003,
-      "ssdistnr": 2,
-      "ssmagnr": 19.600000381469727,
-      "ssnamenr": "263135",
-      "ranr": 157.9381786,
-      "decnr": -7.6711808,
-      "scorr": 9.21090316772461,
-      "magzpsci": 26.220537185668945,
-      "psfFlux": 40122167296,
-      "psfFluxErr": 7409982464,
-      "snr_psf": 5.414609909057617,
-      "apFlux": 48721391616,
-      "apFluxErr": 9356241920,
-      "snr_ap": 5.207367897033691,
-      "band": "g"
+      "rb": 0.6342856884002686,
+      "ssdistnr": -999,
+      "ssmagnr": -999,
+      "ranr": 147.7987704,
+      "decnr": 4.1519889,
+      "scorr": 53.8233184814453,
+      "magzpsci": 25.715896606445312,
+      "psfFlux": 859886911488,
+      "psfFluxErr": 72628494336,
+      "snr_psf": 11.83952522277832,
+      "apFlux": 941370048512,
+      "apFluxErr": 21068924928,
+      "snr_ap": 44.68050003051758,
+      "band": "i"
     }
   ],
   "prv_nondetections": [
     {
-      "jd": 2461112.7706944,
+      "jd": 2461105.7066551,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3351206651615"
+      },
+      "diffmaglim": 19.67770004272461,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3351,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.24209976196289,
+      "psfFluxErr": 9771242496,
+      "band": "g"
+    },
+    {
+      "jd": 2461105.7185995,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3351218592915"
+      },
+      "diffmaglim": 19.552400588989258,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3351,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.291000366210938,
+      "psfFluxErr": 10966540288,
+      "band": "g"
+    },
+    {
+      "jd": 2461105.7683565,
       "fid": 3,
       "pid": {
-        "$numberLong": "3358270696315"
+        "$numberLong": "3351268351615"
       },
-      "diffmaglim": 19.611600875854492,
+      "diffmaglim": 19.422000885009766,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3351,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.69879913330078,
+      "psfFluxErr": 12366006272,
+      "band": "i"
+    },
+    {
+      "jd": 2461105.8823958,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3351382391615"
+      },
+      "diffmaglim": 19.36829948425293,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3351,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.219900131225586,
+      "psfFluxErr": 12993016832,
+      "band": "r"
+    },
+    {
+      "jd": 2461105.8838079,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3351383802915"
+      },
+      "diffmaglim": 19.261600494384766,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3351,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.249000549316406,
+      "psfFluxErr": 14334735360,
+      "band": "r"
+    },
+    {
+      "jd": 2461106.6933565,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3352193351615"
+      },
+      "diffmaglim": 19.821800231933594,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3352,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.23069953918457,
+      "psfFluxErr": 8556767232,
+      "band": "g"
+    },
+    {
+      "jd": 2461106.7134606,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3352213462915"
+      },
+      "diffmaglim": 20.060100555419922,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3352,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.2731990814209,
+      "psfFluxErr": 6870520320,
+      "band": "g"
+    },
+    {
+      "jd": 2461106.8787616,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3352378762915"
+      },
+      "diffmaglim": 19.228500366210938,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3352,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.712200164794922,
+      "psfFluxErr": 14778475520,
+      "band": "i"
+    },
+    {
+      "jd": 2461106.9215509,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3352421552915"
+      },
+      "diffmaglim": 19.135000228881836,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3352,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.189599990844727,
+      "psfFluxErr": 16107560960,
+      "band": "r"
+    },
+    {
+      "jd": 2461106.9225,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3352422501615"
+      },
+      "diffmaglim": 19.142499923706055,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3352,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.168100357055664,
+      "psfFluxErr": 15996681216,
+      "band": "r"
+    },
+    {
+      "jd": 2461107.747419,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3353247412915"
+      },
+      "diffmaglim": 20.13129997253418,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3353,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.27829933166504,
+      "psfFluxErr": 6434427904,
+      "band": "r"
+    },
+    {
+      "jd": 2461107.7483565,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3353248351615"
+      },
+      "diffmaglim": 19.36910057067871,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3353,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.513500213623047,
+      "psfFluxErr": 12983433216,
+      "band": "r"
+    },
+    {
+      "jd": 2461107.7783218,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3353278322915"
+      },
+      "diffmaglim": 19.77359962463379,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3353,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.291000366210938,
+      "psfFluxErr": 8945200128,
+      "band": "g"
+    },
+    {
+      "jd": 2461107.7787963,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3353278791615"
+      },
+      "diffmaglim": 19.697099685668945,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3353,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.263700485229492,
+      "psfFluxErr": 9598203904,
+      "band": "g"
+    },
+    {
+      "jd": 2461107.8279861,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3353327982915"
+      },
+      "diffmaglim": 19.200199127197266,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3353,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.73390007019043,
+      "psfFluxErr": 15168764928,
+      "band": "i"
+    },
+    {
+      "jd": 2461107.8289236,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3353328921615"
+      },
+      "diffmaglim": 19.126100540161133,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3353,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.688800811767578,
+      "psfFluxErr": 16240133120,
+      "band": "i"
+    },
+    {
+      "jd": 2461108.6784028,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3354178401615"
+      },
+      "diffmaglim": 20.06279945373535,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3354,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.224199295043945,
+      "psfFluxErr": 6853462016,
+      "band": "r"
+    },
+    {
+      "jd": 2461108.7483102,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3354248312915"
+      },
+      "diffmaglim": 19.950000762939453,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3354,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.940900802612305,
+      "psfFluxErr": 7603780096,
+      "band": "g"
+    },
+    {
+      "jd": 2461108.7826505,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3354282651615"
+      },
+      "diffmaglim": 19.594900131225586,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3354,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.672800064086914,
+      "psfFluxErr": 10545564672,
+      "band": "i"
+    },
+    {
+      "jd": 2461108.7854745,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3354285472915"
+      },
+      "diffmaglim": 19.691600799560547,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3354,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.6294002532959,
+      "psfFluxErr": 9646938112,
+      "band": "i"
+    },
+    {
+      "jd": 2461108.9054051,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3354405402915"
+      },
+      "diffmaglim": 19.058500289916992,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3354,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.97260093688965,
+      "psfFluxErr": 17283420160,
+      "band": "r"
+    },
+    {
+      "jd": 2461111.7689468,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3357268941615"
+      },
+      "diffmaglim": 19.96179962158203,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3357,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.69420051574707,
+      "psfFluxErr": 7521594880,
+      "band": "i"
+    },
+    {
+      "jd": 2461111.8200579,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3357320051615"
+      },
+      "diffmaglim": 20.32659912109375,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3357,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.27120018005371,
+      "psfFluxErr": 5375144448,
+      "band": "g"
+    },
+    {
+      "jd": 2461112.7608102,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3358260811615"
+      },
+      "diffmaglim": 19.696800231933594,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
       "nid": 3358,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.510499954223633,
-      "psfFluxErr": 10384591872,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.71489906311035,
+      "psfFluxErr": 9600851968,
       "band": "i"
     },
     {
-      "jd": 2461112.7931597,
-      "fid": 2,
+      "jd": 2461112.7626968,
+      "fid": 3,
       "pid": {
-        "$numberLong": "3358293156315"
+        "$numberLong": "3358262692915"
       },
-      "diffmaglim": 20.292400360107422,
+      "diffmaglim": 19.938499450683594,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
       "nid": 3358,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.171899795532227,
-      "psfFluxErr": 5547146752,
-      "band": "r"
-    },
-    {
-      "jd": 2461113.7585532,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3359258556315"
-      },
-      "diffmaglim": 20.284299850463867,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3359,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.18720054626465,
-      "psfFluxErr": 5588688384,
-      "band": "g"
-    },
-    {
-      "jd": 2461113.8158565,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3359315856315"
-      },
-      "diffmaglim": 19.53619956970215,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3359,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.217199325561523,
-      "psfFluxErr": 11131405312,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.739099502563477,
+      "psfFluxErr": 7684755968,
       "band": "i"
     },
     {
-      "jd": 2461113.8534259,
+      "jd": 2461112.7959838,
       "fid": 2,
       "pid": {
-        "$numberLong": "3359353426315"
+        "$numberLong": "3358295982915"
       },
-      "diffmaglim": 16.70669937133789,
+      "diffmaglim": 20.08449935913086,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
-      "nid": 3359,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 23.43720054626465,
-      "psfFluxErr": 150782197760,
+      "nid": 3358,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.303699493408203,
+      "psfFluxErr": 6717846016,
       "band": "r"
     },
     {
-      "jd": 2461114.7514468,
+      "jd": 2461112.7988079,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3358298801615"
+      },
+      "diffmaglim": 20.35770034790039,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3358,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.264400482177734,
+      "psfFluxErr": 5223357440,
+      "band": "r"
+    },
+    {
+      "jd": 2461113.7081134,
       "fid": 1,
       "pid": {
-        "$numberLong": "3360251446315"
+        "$numberLong": "3359208111615"
       },
-      "diffmaglim": 20.348600387573242,
+      "diffmaglim": 20.427000045776367,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3359,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.271499633789062,
+      "psfFluxErr": 4900381184,
+      "band": "g"
+    },
+    {
+      "jd": 2461113.7096528,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3359209652915"
+      },
+      "diffmaglim": 20.446699142456055,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3359,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.294200897216797,
+      "psfFluxErr": 4812272640,
+      "band": "g"
+    },
+    {
+      "jd": 2461113.7912963,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3359291291615"
+      },
+      "diffmaglim": 19.234800338745117,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3359,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 24.989500045776367,
+      "psfFluxErr": 14692973568,
+      "band": "i"
+    },
+    {
+      "jd": 2461113.7952662,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3359295262915"
+      },
+      "diffmaglim": 19.221500396728516,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3359,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 24.970399856567383,
+      "psfFluxErr": 14874063872,
+      "band": "i"
+    },
+    {
+      "jd": 2461113.8491898,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3359349181615"
+      },
+      "diffmaglim": 18.33609962463379,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3359,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 24.904699325561523,
+      "psfFluxErr": 33619400704,
+      "band": "r"
+    },
+    {
+      "jd": 2461114.7566435,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3360256642915"
+      },
+      "diffmaglim": 20.55389976501465,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
       "nid": 3360,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.214399337768555,
-      "psfFluxErr": 5267319296,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.312599182128906,
+      "psfFluxErr": 4359833600,
       "band": "g"
     },
     {
-      "jd": 2461114.8014468,
-      "fid": 3,
+      "jd": 2461114.7580671,
+      "fid": 1,
       "pid": {
-        "$numberLong": "3360301446315"
+        "$numberLong": "3360258061615"
       },
-      "diffmaglim": 19.806800842285156,
+      "diffmaglim": 20.394699096679688,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
       "nid": 3360,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.482200622558594,
-      "psfFluxErr": 8675799040,
-      "band": "i"
-    },
-    {
-      "jd": 2461115.7729167,
-      "fid": 2,
-      "pid": {
-        "$numberLong": "3361272916315"
-      },
-      "diffmaglim": 20.064199447631836,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3361,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.101499557495117,
-      "psfFluxErr": 6844632064,
-      "band": "r"
-    },
-    {
-      "jd": 2461115.8087847,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3361308786315"
-      },
-      "diffmaglim": 19.526599884033203,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3361,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.330799102783203,
-      "psfFluxErr": 11230261248,
-      "band": "i"
-    },
-    {
-      "jd": 2461115.8171065,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3361317106315"
-      },
-      "diffmaglim": 20.068500518798828,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3361,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.07229995727539,
-      "psfFluxErr": 6817571328,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.284500122070312,
+      "psfFluxErr": 5048358912,
       "band": "g"
     },
     {
-      "jd": 2461116.7183681,
-      "fid": 2,
-      "pid": {
-        "$numberLong": "3362218366315"
-      },
-      "diffmaglim": 20.184999465942383,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3362,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.141000747680664,
-      "psfFluxErr": 6123927552,
-      "band": "r"
-    },
-    {
-      "jd": 2461116.7494792,
+      "jd": 2461114.79625,
       "fid": 3,
       "pid": {
-        "$numberLong": "3362249476315"
+        "$numberLong": "3360296241615"
       },
-      "diffmaglim": 19.5762996673584,
+      "diffmaglim": 19.80940055847168,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
-      "nid": 3362,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.41010093688965,
-      "psfFluxErr": 10727784448,
+      "nid": 3360,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.68939971923828,
+      "psfFluxErr": 8655050752,
       "band": "i"
     },
     {
-      "jd": 2461116.7899537,
-      "fid": 1,
+      "jd": 2461114.7971875,
+      "fid": 3,
       "pid": {
-        "$numberLong": "3362289956315"
+        "$numberLong": "3360297182915"
       },
-      "diffmaglim": 20.003299713134766,
+      "diffmaglim": 20.040199279785156,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
-      "nid": 3362,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.033199310302734,
-      "psfFluxErr": 7239522304,
+      "nid": 3360,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.71940040588379,
+      "psfFluxErr": 6997616640,
+      "band": "i"
+    },
+    {
+      "jd": 2461114.8404861,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3360340481615"
+      },
+      "diffmaglim": 20.26059913635254,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3360,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.24650001525879,
+      "psfFluxErr": 5712027136,
+      "band": "r"
+    },
+    {
+      "jd": 2461114.8409606,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3360340962915"
+      },
+      "diffmaglim": 20.291000366210938,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3360,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.255699157714844,
+      "psfFluxErr": 5554304512,
+      "band": "r"
+    },
+    {
+      "jd": 2461115.7781134,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3361278111615"
+      },
+      "diffmaglim": 20.318700790405273,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3361,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.214000701904297,
+      "psfFluxErr": 5414390272,
+      "band": "r"
+    },
+    {
+      "jd": 2461115.8045255,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3361304521615"
+      },
+      "diffmaglim": 19.713199615478516,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3361,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.53219985961914,
+      "psfFluxErr": 9456927744,
+      "band": "i"
+    },
+    {
+      "jd": 2461115.806412,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3361306412915"
+      },
+      "diffmaglim": 18.167299270629883,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3361,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.957799911499023,
+      "psfFluxErr": 39274446848,
+      "band": "i"
+    },
+    {
+      "jd": 2461115.8208796,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3361320871615"
+      },
+      "diffmaglim": 19.885799407958984,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3361,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.080400466918945,
+      "psfFluxErr": 8066963968,
       "band": "g"
     },
     {
-      "jd": 2461117.7751042,
+      "jd": 2461116.7164815,
       "fid": 2,
       "pid": {
-        "$numberLong": "3363275106315"
+        "$numberLong": "3362216482915"
       },
-      "diffmaglim": 20.31329917907715,
+      "diffmaglim": 20.434600830078125,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3362,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.265600204467773,
+      "psfFluxErr": 4866195456,
+      "band": "r"
+    },
+    {
+      "jd": 2461116.7286574,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3362228651615"
+      },
+      "diffmaglim": 20.386600494384766,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3362,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.242700576782227,
+      "psfFluxErr": 5086155264,
+      "band": "r"
+    },
+    {
+      "jd": 2461116.7409954,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3362240991615"
+      },
+      "diffmaglim": 19.790199279785156,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3362,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.600799560546875,
+      "psfFluxErr": 8809478144,
+      "band": "i"
+    },
+    {
+      "jd": 2461116.7428819,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3362242882915"
+      },
+      "diffmaglim": 20.017499923706055,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3362,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.660600662231445,
+      "psfFluxErr": 7145454592,
+      "band": "i"
+    },
+    {
+      "jd": 2461116.7880556,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3362288051615"
+      },
+      "diffmaglim": 19.9783992767334,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3362,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.06060028076172,
+      "psfFluxErr": 7407473664,
+      "band": "g"
+    },
+    {
+      "jd": 2461116.8099074,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3362309902915"
+      },
+      "diffmaglim": 20.063100814819336,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3362,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.181299209594727,
+      "psfFluxErr": 6851560960,
+      "band": "g"
+    },
+    {
+      "jd": 2461117.7798148,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3363279811615"
+      },
+      "diffmaglim": 20.416900634765625,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
       "nid": 3363,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.140399932861328,
-      "psfFluxErr": 5441394176,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.25819969177246,
+      "psfFluxErr": 4946176512,
       "band": "r"
     },
     {
-      "jd": 2461117.8371759,
-      "fid": 1,
+      "jd": 2461117.8124074,
+      "fid": 2,
       "pid": {
-        "$numberLong": "3363337176315"
+        "$numberLong": "3363312402915"
       },
-      "diffmaglim": 20.157400131225586,
+      "diffmaglim": 20.2091007232666,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
       "nid": 3363,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.205299377441406,
-      "psfFluxErr": 6281592832,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.268299102783203,
+      "psfFluxErr": 5989486592,
+      "band": "r"
+    },
+    {
+      "jd": 2461117.8313657,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3363331361615"
+      },
+      "diffmaglim": 19.963600158691406,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3363,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.677799224853516,
+      "psfFluxErr": 7509133312,
+      "band": "i"
+    },
+    {
+      "jd": 2461117.8318287,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3363331822915"
+      },
+      "diffmaglim": 19.989700317382812,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3363,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.716699600219727,
+      "psfFluxErr": 7330771456,
+      "band": "i"
+    },
+    {
+      "jd": 2461117.839537,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3363339532915"
+      },
+      "diffmaglim": 20.274799346923828,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3363,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.257600784301758,
+      "psfFluxErr": 5637806592,
       "band": "g"
     },
     {
-      "jd": 2461118.7819444,
+      "jd": 2461117.8409491,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3363340941615"
+      },
+      "diffmaglim": 20.134899139404297,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3363,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.207599639892578,
+      "psfFluxErr": 6413132800,
+      "band": "g"
+    },
+    {
+      "jd": 2461118.7786343,
       "fid": 3,
       "pid": {
-        "$numberLong": "3364281946315"
+        "$numberLong": "3364278631615"
       },
-      "diffmaglim": 19.801799774169922,
+      "diffmaglim": 19.88520050048828,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
       "nid": 3364,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.513900756835938,
-      "psfFluxErr": 8715853824,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.705400466918945,
+      "psfFluxErr": 8071413248,
       "band": "i"
     },
     {
-      "jd": 2461118.7980787,
-      "fid": 2,
+      "jd": 2461118.7795833,
+      "fid": 3,
       "pid": {
-        "$numberLong": "3364298076315"
+        "$numberLong": "3364279582915"
       },
-      "diffmaglim": 20.270000457763672,
+      "diffmaglim": 20.03700065612793,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
       "nid": 3364,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.175100326538086,
-      "psfFluxErr": 5662779904,
-      "band": "r"
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.741100311279297,
+      "psfFluxErr": 7018262528,
+      "band": "i"
     },
     {
-      "jd": 2461118.8667477,
-      "fid": 1,
+      "jd": 2461118.8028009,
+      "fid": 2,
       "pid": {
-        "$numberLong": "3364366746315"
+        "$numberLong": "3364302802915"
       },
-      "diffmaglim": 20.155500411987305,
+      "diffmaglim": 20.47209930419922,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
       "nid": 3364,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.188100814819336,
-      "psfFluxErr": 6292593152,
-      "band": "g"
-    },
-    {
-      "jd": 2461119.7209028,
-      "fid": 2,
-      "pid": {
-        "$numberLong": "3365220906315"
-      },
-      "diffmaglim": 20.25749969482422,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3365,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.162700653076172,
-      "psfFluxErr": 5728356352,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.285900115966797,
+      "psfFluxErr": 4700998656,
       "band": "r"
     },
     {
-      "jd": 2461119.7752431,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3365275246315"
-      },
-      "diffmaglim": 20.31559944152832,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3365,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.237899780273438,
-      "psfFluxErr": 5429877248,
-      "band": "g"
-    },
-    {
-      "jd": 2461119.7945949,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3365294596315"
-      },
-      "diffmaglim": 19.73040008544922,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3365,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.525400161743164,
-      "psfFluxErr": 9308286976,
-      "band": "i"
-    },
-    {
-      "jd": 2461120.7816204,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3366281626315"
-      },
-      "diffmaglim": 19.755300521850586,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3366,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.525400161743164,
-      "psfFluxErr": 9097238528,
-      "band": "i"
-    },
-    {
-      "jd": 2461120.7954051,
+      "jd": 2461118.8046875,
       "fid": 2,
       "pid": {
-        "$numberLong": "3366295406315"
+        "$numberLong": "3364304681615"
       },
-      "diffmaglim": 20.215900421142578,
+      "diffmaglim": 20.376300811767578,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
-      "nid": 3366,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.1914005279541,
-      "psfFluxErr": 5952093184,
+      "nid": 3364,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.261899948120117,
+      "psfFluxErr": 5134633984,
       "band": "r"
     },
     {
-      "jd": 2461120.8529282,
+      "jd": 2461118.8394676,
       "fid": 1,
       "pid": {
-        "$numberLong": "3366352926315"
+        "$numberLong": "3364339462915"
       },
-      "diffmaglim": 20.256900787353516,
+      "diffmaglim": 20.36210060119629,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
-      "nid": 3366,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.199899673461914,
-      "psfFluxErr": 5731515904,
+      "nid": 3364,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.280500411987305,
+      "psfFluxErr": 5202230272,
       "band": "g"
     },
     {
-      "jd": 2461121.7816667,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3367281666315"
-      },
-      "diffmaglim": 19.701099395751953,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3367,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.241199493408203,
-      "psfFluxErr": 9562909696,
-      "band": "i"
-    },
-    {
-      "jd": 2461121.7940394,
-      "fid": 2,
-      "pid": {
-        "$numberLong": "3367294036315"
-      },
-      "diffmaglim": 19.86479949951172,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3367,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.00119972229004,
-      "psfFluxErr": 8224510976,
-      "band": "r"
-    },
-    {
-      "jd": 2461121.814838,
+      "jd": 2461118.8531366,
       "fid": 1,
       "pid": {
-        "$numberLong": "3367314836315"
-      },
-      "diffmaglim": 19.212099075317383,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3367,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.436599731445312,
-      "psfFluxErr": 15003417600,
-      "band": "g"
-    },
-    {
-      "jd": 2461122.7690741,
-      "fid": 2,
-      "pid": {
-        "$numberLong": "3368269076315"
-      },
-      "diffmaglim": 20.38920021057129,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3368,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.161300659179688,
-      "psfFluxErr": 5073991680,
-      "band": "r"
-    },
-    {
-      "jd": 2461122.7833912,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3368283396315"
-      },
-      "diffmaglim": 19.967599868774414,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3368,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.479799270629883,
-      "psfFluxErr": 7481520640,
-      "band": "i"
-    },
-    {
-      "jd": 2461122.7944907,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3368294496315"
-      },
-      "diffmaglim": 20.424800872802734,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3368,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.221900939941406,
-      "psfFluxErr": 4910316544,
-      "band": "g"
-    },
-    {
-      "jd": 2461123.8749769,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3369374976315"
-      },
-      "diffmaglim": 20.150699615478516,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3369,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.12190055847168,
-      "psfFluxErr": 6320478720,
-      "band": "g"
-    },
-    {
-      "jd": 2461124.6837384,
-      "fid": 2,
-      "pid": {
-        "$numberLong": "3370183736315"
-      },
-      "diffmaglim": 20.249000549316406,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3370,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.170400619506836,
-      "psfFluxErr": 5773372928,
-      "band": "r"
-    },
-    {
-      "jd": 2461124.7964468,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3370296446315"
-      },
-      "diffmaglim": 20.323200225830078,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3370,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.244699478149414,
-      "psfFluxErr": 5391997952,
-      "band": "g"
-    },
-    {
-      "jd": 2461124.858831,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3370358836315"
-      },
-      "diffmaglim": 19.64590072631836,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3370,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.51609992980957,
-      "psfFluxErr": 10061658112,
-      "band": "i"
-    },
-    {
-      "jd": 2461125.7259144,
-      "fid": 2,
-      "pid": {
-        "$numberLong": "3371225916315"
-      },
-      "diffmaglim": 19.88450050354004,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3371,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.193300247192383,
-      "psfFluxErr": 8076620288,
-      "band": "r"
-    },
-    {
-      "jd": 2461125.7718981,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3371271896315"
-      },
-      "diffmaglim": 19.37779998779297,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3371,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.49519920349121,
-      "psfFluxErr": 12879821824,
-      "band": "i"
-    },
-    {
-      "jd": 2461125.832662,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3371332666315"
-      },
-      "diffmaglim": 19.7677001953125,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3371,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.189199447631836,
-      "psfFluxErr": 8993935360,
-      "band": "g"
-    },
-    {
-      "jd": 2461126.6872106,
-      "fid": 2,
-      "pid": {
-        "$numberLong": "3372187216315"
-      },
-      "diffmaglim": 19.992799758911133,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3372,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.16699981689453,
-      "psfFluxErr": 7309874688,
-      "band": "r"
-    },
-    {
-      "jd": 2461126.7495255,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3372249526315"
-      },
-      "diffmaglim": 19.606199264526367,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3372,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.526199340820312,
-      "psfFluxErr": 10436384768,
-      "band": "i"
-    },
-    {
-      "jd": 2461126.8534954,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3372353496315"
-      },
-      "diffmaglim": 19.783199310302734,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3372,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.173900604248047,
-      "psfFluxErr": 8866457600,
-      "band": "g"
-    },
-    {
-      "jd": 2461127.8933912,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3373393396315"
-      },
-      "diffmaglim": 18.991300582885742,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3373,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.976900100708008,
-      "psfFluxErr": 18386948096,
-      "band": "g"
-    },
-    {
-      "jd": 2461132.7078472,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3378207846315"
-      },
-      "diffmaglim": 18.77560043334961,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3378,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.48509979248047,
-      "psfFluxErr": 22427951104,
-      "band": "i"
-    },
-    {
-      "jd": 2461132.7531713,
-      "fid": 2,
-      "pid": {
-        "$numberLong": "3378253176315"
-      },
-      "diffmaglim": 19.242900848388672,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3378,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.1653995513916,
-      "psfFluxErr": 14583758848,
-      "band": "r"
-    },
-    {
-      "jd": 2461132.8684028,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3378368406315"
-      },
-      "diffmaglim": 17.690399169921875,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3378,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.789100646972656,
-      "psfFluxErr": 60935479296,
-      "band": "g"
-    },
-    {
-      "jd": 2461134.7053009,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3380205306315"
-      },
-      "diffmaglim": 19.161699295043945,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3380,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.011699676513672,
-      "psfFluxErr": 15716295680,
-      "band": "g"
-    },
-    {
-      "jd": 2461134.8027662,
-      "fid": 2,
-      "pid": {
-        "$numberLong": "3380302766315"
-      },
-      "diffmaglim": 17.275400161743164,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3380,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.391199111938477,
-      "psfFluxErr": 89303785472,
-      "band": "r"
-    },
-    {
-      "jd": 2461134.8454051,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3380345406315"
-      },
-      "diffmaglim": 18.79560089111328,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3380,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.490100860595703,
-      "psfFluxErr": 22018588672,
-      "band": "i"
-    },
-    {
-      "jd": 2461135.7278241,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3381227826315"
-      },
-      "diffmaglim": 19.945600509643555,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3381,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.2273006439209,
-      "psfFluxErr": 7634659840,
-      "band": "g"
-    },
-    {
-      "jd": 2461135.8389352,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3381338936315"
-      },
-      "diffmaglim": 19.132400512695312,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3381,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.482799530029297,
-      "psfFluxErr": 16146174976,
-      "band": "i"
-    },
-    {
-      "jd": 2461137.7076968,
-      "fid": 2,
-      "pid": {
-        "$numberLong": "3383207696315"
+        "$numberLong": "3364353131615"
       },
       "diffmaglim": 20.27280044555664,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
-      "nid": 3383,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.166200637817383,
+      "nid": 3364,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.23080062866211,
       "psfFluxErr": 5648195072,
-      "band": "r"
-    },
-    {
-      "jd": 2461137.8602083,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3383360206315"
-      },
-      "diffmaglim": 19.19219970703125,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3383,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.44260025024414,
-      "psfFluxErr": 15280934912,
-      "band": "i"
-    },
-    {
-      "jd": 2461138.7106134,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3384210616315"
-      },
-      "diffmaglim": 20.345500946044922,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3384,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.21179962158203,
-      "psfFluxErr": 5282377216,
       "band": "g"
     },
     {
-      "jd": 2461138.7467708,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3384246776315"
-      },
-      "diffmaglim": 19.658700942993164,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3384,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.47800064086914,
-      "psfFluxErr": 9943734272,
-      "band": "i"
-    },
-    {
-      "jd": 2461139.7308102,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3385230816315"
-      },
-      "diffmaglim": 20.359899520874023,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3385,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.206100463867188,
-      "psfFluxErr": 5212788224,
-      "band": "g"
-    },
-    {
-      "jd": 2461139.7534606,
-      "fid": 3,
-      "pid": {
-        "$numberLong": "3385253466315"
-      },
-      "diffmaglim": 19.502899169921875,
-      "programpi": "Kasliwal/Graham",
-      "programid": 1,
-      "nid": 3385,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.41200065612793,
-      "psfFluxErr": 11478105088,
-      "band": "i"
-    },
-    {
-      "jd": 2461140.6857523,
+      "jd": 2461119.6900463,
       "fid": 2,
       "pid": {
-        "$numberLong": "3386185756315"
+        "$numberLong": "3365190041615"
       },
-      "diffmaglim": 20.172399520874023,
+      "diffmaglim": 20.244800567626953,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
-      "nid": 3386,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.140600204467773,
-      "psfFluxErr": 6195408896,
+      "nid": 3365,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.259700775146484,
+      "psfFluxErr": 5795749888,
       "band": "r"
     },
     {
-      "jd": 2461140.7079167,
-      "fid": 3,
+      "jd": 2461119.7334606,
+      "fid": 2,
       "pid": {
-        "$numberLong": "3386207916315"
+        "$numberLong": "3365233462915"
       },
-      "diffmaglim": 19.774499893188477,
+      "diffmaglim": 20.5044002532959,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
-      "nid": 3386,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 25.478200912475586,
-      "psfFluxErr": 8937784320,
+      "nid": 3365,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.30620002746582,
+      "psfFluxErr": 4563203072,
+      "band": "r"
+    },
+    {
+      "jd": 2461119.7799537,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3365279952915"
+      },
+      "diffmaglim": 20.563600540161133,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3365,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.306800842285156,
+      "psfFluxErr": 4321053696,
+      "band": "g"
+    },
+    {
+      "jd": 2461119.7813889,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3365281381615"
+      },
+      "diffmaglim": 20.438899993896484,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3365,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.2810001373291,
+      "psfFluxErr": 4846964224,
+      "band": "g"
+    },
+    {
+      "jd": 2461119.7978935,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3365297891615"
+      },
+      "diffmaglim": 19.85580062866211,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3365,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.717100143432617,
+      "psfFluxErr": 8292960256,
       "band": "i"
     },
     {
-      "jd": 2461140.7434259,
-      "fid": 1,
+      "jd": 2461119.8288079,
+      "fid": 3,
       "pid": {
-        "$numberLong": "3386243426315"
+        "$numberLong": "3365328802915"
       },
-      "diffmaglim": 20.376399993896484,
+      "diffmaglim": 19.985300064086914,
       "programpi": "Kasliwal/Graham",
       "programid": 1,
-      "nid": 3386,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.226299285888672,
-      "psfFluxErr": 5134164992,
+      "nid": 3365,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.753400802612305,
+      "psfFluxErr": 7360542208,
+      "band": "i"
+    },
+    {
+      "jd": 2461120.7792477,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3366279242915"
+      },
+      "diffmaglim": 18.327999114990234,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3366,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.353900909423828,
+      "psfFluxErr": 33871177728,
+      "band": "i"
+    },
+    {
+      "jd": 2461120.7982292,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3366298221615"
+      },
+      "diffmaglim": 20.40530014038086,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3366,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.26569938659668,
+      "psfFluxErr": 4999307264,
+      "band": "r"
+    },
+    {
+      "jd": 2461120.8095949,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3366309592915"
+      },
+      "diffmaglim": 17.165199279785156,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3366,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.88479995727539,
+      "psfFluxErr": 98843959296,
+      "band": "r"
+    },
+    {
+      "jd": 2461120.8384838,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3366338481615"
+      },
+      "diffmaglim": 20.348100662231445,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3366,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.23310089111328,
+      "psfFluxErr": 5269744640,
       "band": "g"
     },
     {
-      "jd": 2461142.6994792,
+      "jd": 2461120.8515162,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388199476315"
+        "$numberLong": "3366351512915"
       },
-      "diffmaglim": 19.963300704956055,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.212200164794922,
-      "psfFluxErr": 7511204864,
+      "diffmaglim": 17.17530059814453,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3366,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.849899291992188,
+      "psfFluxErr": 97928626176,
       "band": "g"
     },
     {
-      "jd": 2461142.6999537,
+      "jd": 2461121.7783565,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3367278351615"
+      },
+      "diffmaglim": 19.800399780273438,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3367,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.46769905090332,
+      "psfFluxErr": 8727098368,
+      "band": "i"
+    },
+    {
+      "jd": 2461121.7793056,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3367279302915"
+      },
+      "diffmaglim": 19.744600296020508,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3367,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.249000549316406,
+      "psfFluxErr": 9187338240,
+      "band": "i"
+    },
+    {
+      "jd": 2461121.8006366,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3367300632915"
+      },
+      "diffmaglim": 20.86039924621582,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3367,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.98710060119629,
+      "psfFluxErr": 3287532800,
+      "band": "r"
+    },
+    {
+      "jd": 2461121.8015856,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3367301581615"
+      },
+      "diffmaglim": 19.89459991455078,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3367,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.06719970703125,
+      "psfFluxErr": 8001839616,
+      "band": "r"
+    },
+    {
+      "jd": 2461121.8171991,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388199956315"
+        "$numberLong": "3367317191615"
       },
-      "diffmaglim": 20.107900619506836,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.21139907836914,
-      "psfFluxErr": 6574604288,
+      "diffmaglim": 20.108999252319336,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3367,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.054500579833984,
+      "psfFluxErr": 6567953920,
       "band": "g"
     },
     {
-      "jd": 2461142.7004167,
+      "jd": 2461121.8331134,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388200416315"
+        "$numberLong": "3367333112915"
       },
-      "diffmaglim": 20.26580047607422,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.218599319458008,
-      "psfFluxErr": 5684727808,
+      "diffmaglim": 16.58930015563965,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3367,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.874500274658203,
+      "psfFluxErr": 168000159744,
       "band": "g"
     },
     {
-      "jd": 2461142.7008912,
+      "jd": 2461122.7638889,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3368263882915"
+      },
+      "diffmaglim": 20.47450065612793,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3368,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.279699325561523,
+      "psfFluxErr": 4690612224,
+      "band": "r"
+    },
+    {
+      "jd": 2461122.7780787,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3368278072915"
+      },
+      "diffmaglim": 20.094200134277344,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3368,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.716400146484375,
+      "psfFluxErr": 6658091520,
+      "band": "i"
+    },
+    {
+      "jd": 2461122.7963773,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388200896315"
+        "$numberLong": "3368296372915"
       },
-      "diffmaglim": 20.24920082092285,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.228700637817383,
-      "psfFluxErr": 5772308480,
+      "diffmaglim": 20.5314998626709,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3368,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.30419921875,
+      "psfFluxErr": 4450717184,
       "band": "g"
     },
     {
-      "jd": 2461142.7013657,
+      "jd": 2461123.6606019,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388201366315"
+        "$numberLong": "3369160602915"
       },
-      "diffmaglim": 20.236799240112305,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.226600646972656,
-      "psfFluxErr": 5838619648,
+      "diffmaglim": 20.3174991607666,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3369,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.27039909362793,
+      "psfFluxErr": 5420385792,
       "band": "g"
     },
     {
-      "jd": 2461142.7018287,
+      "jd": 2461123.6615509,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388201826315"
+        "$numberLong": "3369161551615"
       },
-      "diffmaglim": 20.247600555419922,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.222000122070312,
-      "psfFluxErr": 5780823040,
+      "diffmaglim": 20.263599395751953,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3369,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.23859977722168,
+      "psfFluxErr": 5696263168,
       "band": "g"
     },
     {
-      "jd": 2461142.7023032,
+      "jd": 2461123.6856019,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3369185601615"
+      },
+      "diffmaglim": 20.28860092163086,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3369,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.24570083618164,
+      "psfFluxErr": 5566592512,
+      "band": "r"
+    },
+    {
+      "jd": 2461123.6993519,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3369199352915"
+      },
+      "diffmaglim": 20.4950008392334,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3369,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.297199249267578,
+      "psfFluxErr": 4602878464,
+      "band": "r"
+    },
+    {
+      "jd": 2461123.8185301,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3369318532915"
+      },
+      "diffmaglim": 19.97760009765625,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3369,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.716699600219727,
+      "psfFluxErr": 7412928512,
+      "band": "i"
+    },
+    {
+      "jd": 2461123.8204051,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3369320401615"
+      },
+      "diffmaglim": 19.893400192260742,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3369,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.686500549316406,
+      "psfFluxErr": 8010686976,
+      "band": "i"
+    },
+    {
+      "jd": 2461124.6731019,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3370173102915"
+      },
+      "diffmaglim": 20.371400833129883,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3370,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.298200607299805,
+      "psfFluxErr": 5157859840,
+      "band": "r"
+    },
+    {
+      "jd": 2461124.685625,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3370185621615"
+      },
+      "diffmaglim": 20.279399871826172,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3370,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.270599365234375,
+      "psfFluxErr": 5613967872,
+      "band": "r"
+    },
+    {
+      "jd": 2461124.7973958,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388202306315"
+        "$numberLong": "3370297392915"
       },
-      "diffmaglim": 20.261499404907227,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.225799560546875,
-      "psfFluxErr": 5707292160,
+      "diffmaglim": 20.46540069580078,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3370,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.324800491333008,
+      "psfFluxErr": 4730092032,
       "band": "g"
     },
     {
-      "jd": 2461142.7027778,
+      "jd": 2461124.7988194,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388202776315"
+        "$numberLong": "3370298811615"
       },
-      "diffmaglim": 20.22450065612793,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.229299545288086,
-      "psfFluxErr": 5905131520,
+      "diffmaglim": 20.367700576782227,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3370,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.27440071105957,
+      "psfFluxErr": 5175468032,
       "band": "g"
     },
     {
-      "jd": 2461142.7032523,
+      "jd": 2461124.8607176,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3370360712915"
+      },
+      "diffmaglim": 19.869199752807617,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3370,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.739299774169922,
+      "psfFluxErr": 8191245312,
+      "band": "i"
+    },
+    {
+      "jd": 2461124.8625926,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3370362591615"
+      },
+      "diffmaglim": 19.79680061340332,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3370,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.704500198364258,
+      "psfFluxErr": 8756076544,
+      "band": "i"
+    },
+    {
+      "jd": 2461125.6922685,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3371192261615"
+      },
+      "diffmaglim": 19.957300186157227,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3371,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.277299880981445,
+      "psfFluxErr": 7552830976,
+      "band": "r"
+    },
+    {
+      "jd": 2461125.7117361,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3371211732915"
+      },
+      "diffmaglim": 19.984100341796875,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3371,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.30579948425293,
+      "psfFluxErr": 7368681472,
+      "band": "r"
+    },
+    {
+      "jd": 2461125.7657523,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3371265751615"
+      },
+      "diffmaglim": 19.680700302124023,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3371,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.70549964904785,
+      "psfFluxErr": 9744278528,
+      "band": "i"
+    },
+    {
+      "jd": 2461125.7666898,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3371266682915"
+      },
+      "diffmaglim": 19.698299407958984,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3371,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.737300872802734,
+      "psfFluxErr": 9587602432,
+      "band": "i"
+    },
+    {
+      "jd": 2461125.8212847,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388203256315"
+        "$numberLong": "3371321282915"
       },
-      "diffmaglim": 20.14150047302246,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.22209930419922,
-      "psfFluxErr": 6374257664,
+      "diffmaglim": 19.653799057006836,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3371,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.131099700927734,
+      "psfFluxErr": 9988729856,
       "band": "g"
     },
     {
-      "jd": 2461142.7037153,
+      "jd": 2461125.8231829,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388203716315"
+        "$numberLong": "3371323181615"
       },
-      "diffmaglim": 20.128400802612305,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.22960090637207,
-      "psfFluxErr": 6451632128,
+      "diffmaglim": 19.499399185180664,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3371,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.943700790405273,
+      "psfFluxErr": 11515165696,
       "band": "g"
     },
     {
-      "jd": 2461142.7041898,
+      "jd": 2461126.6627662,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3372162761615"
+      },
+      "diffmaglim": 19.9242000579834,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3372,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.26180076599121,
+      "psfFluxErr": 7786635264,
+      "band": "r"
+    },
+    {
+      "jd": 2461126.7274769,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388204186315"
+        "$numberLong": "3372227471615"
       },
-      "diffmaglim": 20.17690086364746,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.22920036315918,
-      "psfFluxErr": 6169777152,
+      "diffmaglim": 19.98110008239746,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3372,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.28350067138672,
+      "psfFluxErr": 7389070848,
       "band": "g"
     },
     {
-      "jd": 2461142.7046528,
+      "jd": 2461126.7327315,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3372232731615"
+      },
+      "diffmaglim": 19.731300354003906,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3372,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.701099395751953,
+      "psfFluxErr": 9300573184,
+      "band": "i"
+    },
+    {
+      "jd": 2461127.6531944,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3373153191615"
+      },
+      "diffmaglim": 16.26180076599121,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3373,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 24.036699295043945,
+      "psfFluxErr": 227148283904,
+      "band": "i"
+    },
+    {
+      "jd": 2461127.653669,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3373153662915"
+      },
+      "diffmaglim": 16.287599563598633,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3373,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 23.953899383544922,
+      "psfFluxErr": 221814538240,
+      "band": "i"
+    },
+    {
+      "jd": 2461127.8961111,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3373396112915"
+      },
+      "diffmaglim": 18.997100830078125,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3373,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.09910011291504,
+      "psfFluxErr": 18288977920,
+      "band": "r"
+    },
+    {
+      "jd": 2461130.6666088,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3376166601615"
+      },
+      "diffmaglim": 17.02899932861328,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3376,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 24.94580078125,
+      "psfFluxErr": 112054730752,
+      "band": "i"
+    },
+    {
+      "jd": 2461132.6993171,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3378199312915"
+      },
+      "diffmaglim": 19.30459976196289,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3378,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 25.727699279785156,
+      "psfFluxErr": 13778118656,
+      "band": "i"
+    },
+    {
+      "jd": 2461132.7511227,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3378251121615"
+      },
+      "diffmaglim": 19.284000396728516,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3378,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 25.707799911499023,
+      "psfFluxErr": 14042022912,
+      "band": "i"
+    },
+    {
+      "jd": 2461132.7560301,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3378256032915"
+      },
+      "diffmaglim": 19.479999542236328,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3378,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.3031005859375,
+      "psfFluxErr": 11722764288,
+      "band": "r"
+    },
+    {
+      "jd": 2461132.7569907,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3378256991615"
+      },
+      "diffmaglim": 19.507200241088867,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3378,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.266199111938477,
+      "psfFluxErr": 11432725504,
+      "band": "r"
+    },
+    {
+      "jd": 2461132.8179514,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388204656315"
+        "$numberLong": "3378317952915"
       },
-      "diffmaglim": 20.228099822998047,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.229900360107422,
-      "psfFluxErr": 5885588480,
+      "diffmaglim": 18.734399795532227,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3378,
+      "rcid": 29,
+      "field": 468,
+      "magzpsci": 26.24220085144043,
+      "psfFluxErr": 23295381504,
       "band": "g"
     },
     {
-      "jd": 2461142.7051273,
+      "jd": 2461132.8203009,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388205126315"
+        "$numberLong": "3378320301615"
       },
-      "diffmaglim": 20.1781005859375,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.227800369262695,
-      "psfFluxErr": 6162963968,
+      "diffmaglim": 18.754600524902344,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3378,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.199899673461914,
+      "psfFluxErr": 22865969152,
       "band": "g"
     },
     {
-      "jd": 2461142.7056019,
+      "jd": 2461134.6683796,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388205606315"
+        "$numberLong": "3380168371615"
       },
-      "diffmaglim": 20.149599075317383,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.22800064086914,
-      "psfFluxErr": 6326888960,
-      "band": "g"
-    },
-    {
-      "jd": 2461142.7060764,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388206076315"
-      },
-      "diffmaglim": 20.025400161743164,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.218299865722656,
-      "psfFluxErr": 7093649408,
-      "band": "g"
-    },
-    {
-      "jd": 2461142.7065509,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388206556315"
-      },
-      "diffmaglim": 20.1028995513916,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.215200424194336,
-      "psfFluxErr": 6604958720,
-      "band": "g"
-    },
-    {
-      "jd": 2461142.7070139,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388207016315"
-      },
-      "diffmaglim": 20.111299514770508,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.225000381469727,
-      "psfFluxErr": 6554054144,
-      "band": "g"
-    },
-    {
-      "jd": 2461142.7074884,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388207486315"
-      },
-      "diffmaglim": 19.989900588989258,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.23200035095215,
-      "psfFluxErr": 7329419776,
-      "band": "g"
-    },
-    {
-      "jd": 2461142.707963,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388207966315"
-      },
-      "diffmaglim": 20.05299949645996,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.221399307250977,
-      "psfFluxErr": 6915602432,
-      "band": "g"
-    },
-    {
-      "jd": 2461142.7084259,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388208426315"
-      },
-      "diffmaglim": 20.12619972229004,
-      "programpi": "Prince",
-      "programid": 3,
-      "nid": 3388,
-      "rcid": 63,
-      "field": 367,
-      "magzpsci": 26.215599060058594,
-      "psfFluxErr": 6464722944,
+      "diffmaglim": 20.039100646972656,
+      "programpi": "Kasliwal/Graham",
+      "programid": 1,
+      "nid": 3380,
+      "rcid": 16,
+      "field": 467,
+      "magzpsci": 26.260099411010742,
+      "psfFluxErr": 7004700672,
       "band": "g"
     }
   ],
   "fp_hists": [
     {
-      "field": 367,
-      "rcid": 63,
+      "field": 467,
+      "rcid": 16,
       "fid": 1,
       "pid": {
-        "$numberLong": "3388210316315"
+        "$numberLong": "3380168371615"
       },
       "rfid": {
-        "$numberLong": "367120163"
+        "$numberLong": "467120116"
       },
-      "magzpsci": 26.223899841308594,
-      "magzpsciunc": 0.00001272549980058102,
-      "magzpscirms": 0.030803900212049484,
+      "magzpsci": 26.260099411010742,
+      "magzpsciunc": 0.000017364200175506994,
+      "magzpscirms": 0.034240301698446274,
       "exptime": 30,
-      "diffmaglim": 20.160400390625,
-      "programid": 3,
-      "jd": 2461142.7103125,
-      "forcediffimflux": 307.2522888183594,
-      "forcediffimfluxunc": 38.943641662597656,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "magpsf": 20.00516128540039,
-      "sigmapsf": 0.13761499524116516,
-      "psfFlux": 36135579648,
-      "psfFluxErr": 4580115968,
-      "isdiffpos": true,
-      "snr_psf": 7.889665126800537,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388209846315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.223800659179688,
-      "magzpsciunc": 0.000016821199096739292,
-      "magzpscirms": 0.03559250012040138,
-      "exptime": 30,
-      "diffmaglim": 20.21310043334961,
-      "programid": 3,
-      "jd": 2461142.7098495,
-      "forcediffimflux": 220.52700805664062,
-      "forcediffimfluxunc": 31.15388298034668,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "magpsf": 20.36514663696289,
-      "sigmapsf": 0.1533821076154709,
-      "psfFlux": 25938290688,
-      "psfFluxErr": 3664306176,
-      "isdiffpos": true,
-      "snr_psf": 7.078636169433594,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388209376315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.223800659179688,
-      "magzpsciunc": 0.000016255100490525365,
-      "magzpscirms": 0.034637801349163055,
-      "exptime": 30,
-      "diffmaglim": 20.13089942932129,
-      "programid": 3,
-      "jd": 2461142.709375,
-      "forcediffimflux": 231.65716552734375,
-      "forcediffimfluxunc": 33.82644271850586,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "magpsf": 20.311687469482422,
-      "sigmapsf": 0.1585385501384735,
-      "psfFlux": 27247415296,
-      "psfFluxErr": 3978651648,
-      "isdiffpos": true,
-      "snr_psf": 6.848404407501221,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388208906315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.222700119018555,
-      "magzpsciunc": 0.000016061600035754964,
-      "magzpscirms": 0.034398600459098816,
-      "exptime": 30,
-      "diffmaglim": 20.137500762939453,
-      "programid": 3,
-      "jd": 2461142.7089005,
-      "forcediffimflux": 224.80743408203125,
-      "forcediffimfluxunc": 34.08789825439453,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "magpsf": 20.34317398071289,
-      "sigmapsf": 0.16463185846805573,
-      "psfFlux": 26468569088,
-      "psfFluxErr": 4013469952,
-      "isdiffpos": true,
-      "snr_psf": 6.594933986663818,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388208426315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.215599060058594,
-      "magzpsciunc": 0.00001751329909893684,
-      "magzpscirms": 0.035827700048685074,
-      "exptime": 30,
-      "diffmaglim": 20.12619972229004,
-      "programid": 3,
-      "jd": 2461142.7084259,
-      "forcediffimflux": 207.8383026123047,
-      "forcediffimfluxunc": 36.210662841796875,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "magpsf": 20.421283721923828,
-      "sigmapsf": 0.18916256725788116,
-      "psfFlux": 24631214080,
-      "psfFluxErr": 4291377408,
-      "isdiffpos": true,
-      "snr_psf": 5.739698886871338,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388207966315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.221399307250977,
-      "magzpsciunc": 0.000019062799765379168,
-      "magzpscirms": 0.03720330074429512,
-      "exptime": 30,
-      "diffmaglim": 20.05299949645996,
-      "programid": 3,
-      "jd": 2461142.707963,
-      "forcediffimflux": 172.8358154296875,
-      "forcediffimfluxunc": 39.945858001708984,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "magpsf": 20.627315521240234,
-      "sigmapsf": 0.2509356141090393,
-      "psfFlux": 20373884928,
-      "psfFluxErr": 4708817920,
-      "isdiffpos": true,
-      "snr_psf": 4.326751708984375,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388207486315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.23200035095215,
-      "magzpsciunc": 0.000017941700207302347,
-      "magzpscirms": 0.035099100321531296,
-      "exptime": 30,
-      "diffmaglim": 19.989900588989258,
-      "programid": 3,
-      "jd": 2461142.7074884,
-      "forcediffimflux": 286.8754577636719,
-      "forcediffimfluxunc": 43.210052490234375,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "magpsf": 20.087766647338867,
-      "sigmapsf": 0.16353687644004822,
-      "psfFlux": 33488300032,
-      "psfFluxErr": 5044109312,
-      "isdiffpos": true,
-      "snr_psf": 6.639090538024902,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388207016315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.225000381469727,
-      "magzpsciunc": 0.000014811599612585269,
-      "magzpscirms": 0.03277130052447319,
-      "exptime": 30,
-      "diffmaglim": 20.111299514770508,
-      "programid": 3,
-      "jd": 2461142.7070139,
-      "forcediffimflux": 217.42318725585938,
-      "forcediffimfluxunc": 37.096954345703125,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "magpsf": 20.381736755371094,
-      "sigmapsf": 0.18524934351444244,
-      "psfFlux": 25544978432,
-      "psfFluxErr": 4358509056,
-      "isdiffpos": true,
-      "snr_psf": 5.8609442710876465,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388206556315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.215200424194336,
-      "magzpsciunc": 0.000016093199519673362,
-      "magzpscirms": 0.03411639854311943,
-      "exptime": 30,
-      "diffmaglim": 20.1028995513916,
-      "programid": 3,
-      "jd": 2461142.7065509,
-      "forcediffimflux": 133.4596710205078,
-      "forcediffimfluxunc": 36.24396896362305,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "magpsf": 20.901824951171875,
-      "sigmapsf": 0.2948560118675232,
-      "psfFlux": 15822304256,
-      "psfFluxErr": 4296901632,
-      "isdiffpos": true,
-      "snr_psf": 3.6822588443756104,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388206076315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.218299865722656,
-      "magzpsciunc": 0.000019384400729904883,
-      "magzpscirms": 0.037083499133586884,
-      "exptime": 30,
-      "diffmaglim": 20.025400161743164,
-      "programid": 3,
-      "jd": 2461142.7060764,
-      "forcediffimflux": 117.83699035644531,
-      "forcediffimfluxunc": 38.704872131347656,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "magpsf": 21.040096282958984,
-      "sigmapsf": 0.3566221296787262,
-      "psfFlux": 13930334208,
-      "psfFluxErr": 4575573504,
-      "isdiffpos": true,
-      "snr_psf": 3.0445001125335693,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388205606315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.22800064086914,
-      "magzpsciunc": 0.00001620069997443352,
-      "magzpscirms": 0.034574199467897415,
-      "exptime": 30,
-      "diffmaglim": 20.149599075317383,
-      "programid": 3,
-      "jd": 2461142.7056019,
-      "forcediffimflux": 146.17649841308594,
-      "forcediffimfluxunc": 36.102840423583984,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "magpsf": 20.815807342529297,
-      "sigmapsf": 0.26815637946128845,
-      "psfFlux": 17126836224,
-      "psfFluxErr": 4230005760,
-      "isdiffpos": true,
-      "snr_psf": 4.048892021179199,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388205126315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.227800369262695,
-      "magzpsciunc": 0.000016936499378061853,
-      "magzpscirms": 0.03572319820523262,
-      "exptime": 30,
-      "diffmaglim": 20.1781005859375,
-      "programid": 3,
-      "jd": 2461142.7051273,
-      "forcediffimflux": 30.85696792602539,
-      "forcediffimfluxunc": 36.30413818359375,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": 3616037632,
-      "psfFluxErr": 4254375680,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388204656315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.229900360107422,
-      "magzpsciunc": 0.00001336130026174942,
-      "magzpscirms": 0.03189289942383766,
-      "exptime": 30,
-      "diffmaglim": 20.228099822998047,
-      "programid": 3,
-      "jd": 2461142.7046528,
-      "forcediffimflux": 72.14564514160156,
-      "forcediffimfluxunc": 33.47087860107422,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": 8438200320,
-      "psfFluxErr": 3914775040,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388204186315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.22920036315918,
-      "magzpsciunc": 0.00001406699993822258,
-      "magzpscirms": 0.03262060135602951,
-      "exptime": 30,
-      "diffmaglim": 20.17690086364746,
-      "programid": 3,
-      "jd": 2461142.7041898,
-      "forcediffimflux": 41.542236328125,
-      "forcediffimfluxunc": 35.32936477661133,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": 4861939712,
-      "psfFluxErr": 4134809856,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388203716315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.22960090637207,
-      "magzpsciunc": 0.000015120000171009451,
-      "magzpscirms": 0.033441901206970215,
-      "exptime": 30,
-      "diffmaglim": 20.128400802612305,
-      "programid": 3,
-      "jd": 2461142.7037153,
-      "forcediffimflux": 31.441749572753906,
-      "forcediffimfluxunc": 35.418575286865234,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": 3678461184,
-      "psfFluxErr": 4143721728,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388203256315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.22209930419922,
-      "magzpsciunc": 0.000014365299648488872,
-      "magzpscirms": 0.03268880024552345,
-      "exptime": 30,
-      "diffmaglim": 20.14150047302246,
-      "programid": 3,
-      "jd": 2461142.7032523,
-      "forcediffimflux": 48.3922233581543,
-      "forcediffimfluxunc": 36.35213088989258,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": 5700798464,
-      "psfFluxErr": 4282427392,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388202776315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.229299545288086,
-      "magzpsciunc": 0.00001534120019641705,
-      "magzpscirms": 0.034131500869989395,
-      "exptime": 30,
-      "diffmaglim": 20.22450065612793,
-      "programid": 3,
-      "jd": 2461142.7027778,
-      "forcediffimflux": -16.980798721313477,
-      "forcediffimfluxunc": 32.755645751953125,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": -1987184256,
-      "psfFluxErr": 3833241600,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388202306315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.225799560546875,
-      "magzpsciunc": 0.000012935899576405063,
-      "magzpscirms": 0.031081000342965126,
-      "exptime": 30,
-      "diffmaglim": 20.261499404907227,
-      "programid": 3,
-      "jd": 2461142.7023032,
-      "forcediffimflux": 27.49774169921875,
-      "forcediffimfluxunc": 32.92310333251953,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": 3228323584,
-      "psfFluxErr": 3865278464,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388201826315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.222000122070312,
-      "magzpsciunc": 0.000012928700016345829,
-      "magzpscirms": 0.0312809981405735,
-      "exptime": 30,
-      "diffmaglim": 20.247600555419922,
-      "programid": 3,
-      "jd": 2461142.7018287,
-      "forcediffimflux": 17.73617935180664,
-      "forcediffimfluxunc": 33.55657196044922,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": 2089584128,
-      "psfFluxErr": 3953460224,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388201366315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.226600646972656,
-      "magzpsciunc": 0.000014156499673845246,
-      "magzpscirms": 0.03258109837770462,
-      "exptime": 30,
-      "diffmaglim": 20.236799240112305,
-      "programid": 3,
-      "jd": 2461142.7013657,
-      "forcediffimflux": 38.142696380615234,
-      "forcediffimfluxunc": 31.58783531188965,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": 4474772480,
-      "psfFluxErr": 3705778432,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388200896315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.228700637817383,
-      "magzpsciunc": 0.000014211300367605872,
-      "magzpscirms": 0.032671600580215454,
-      "exptime": 30,
-      "diffmaglim": 20.24920082092285,
-      "programid": 3,
-      "jd": 2461142.7008912,
-      "forcediffimflux": 31.043407440185547,
-      "forcediffimfluxunc": 33.970951080322266,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": 3634870784,
-      "psfFluxErr": 3977656832,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388200416315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.218599319458008,
-      "magzpsciunc": 0.00001492810042691417,
-      "magzpscirms": 0.03364219889044762,
-      "exptime": 30,
-      "diffmaglim": 20.26580047607422,
-      "programid": 3,
-      "jd": 2461142.7004167,
-      "forcediffimflux": -9.720157623291016,
-      "forcediffimfluxunc": 31.954330444335938,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": -1148770944,
-      "psfFluxErr": 3776503040,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388199956315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.21139907836914,
-      "magzpsciunc": 0.00001469369999540504,
-      "magzpscirms": 0.03261080011725426,
-      "exptime": 30,
-      "diffmaglim": 20.107900619506836,
-      "programid": 3,
-      "jd": 2461142.6999537,
-      "forcediffimflux": 17.405563354492188,
-      "forcediffimfluxunc": 37.8914680480957,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": 2070753024,
-      "psfFluxErr": 4507976704,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3388199476315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.212200164794922,
-      "magzpsciunc": 0.000022134800019557588,
-      "magzpscirms": 0.03873319923877716,
-      "exptime": 30,
-      "diffmaglim": 19.963300704956055,
-      "programid": 3,
-      "jd": 2461142.6994792,
-      "forcediffimflux": 33.4344367980957,
-      "forcediffimfluxunc": 42.35210037231445,
-      "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": 3974786304,
-      "psfFluxErr": 5034945024,
-      "band": "g"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3386243426315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.226299285888672,
-      "magzpsciunc": 0.000010575899977993686,
-      "magzpscirms": 0.028630699962377548,
-      "exptime": 30,
-      "diffmaglim": 20.376399993896484,
+      "diffmaglim": 20.039100646972656,
       "programid": 1,
-      "jd": 2461140.7434259,
-      "forcediffimflux": -3.8201029300689697,
-      "forcediffimfluxunc": 28.872892379760742,
+      "jd": 2461134.6683796,
+      "forcediffimflux": -31.972217559814453,
+      "forcediffimfluxunc": 38.38418197631836,
       "procstatus": "0",
-      "distnr": -99999,
-      "magnr": -99999,
-      "sigmagnr": -99999,
-      "chinr": -99999,
-      "sharpnr": -99999,
-      "psfFlux": -448286016,
-      "psfFluxErr": 3388210944,
+      "distnr": 2.672793388366699,
+      "magnr": 22.297000885009766,
+      "sigmagnr": 0.3370000123977661,
+      "chinr": 0.9660000205039978,
+      "sharpnr": -0.5170000195503235,
+      "psfFlux": -3636912384,
+      "psfFluxErr": 4366287872,
       "band": "g"
     },
     {
-      "field": 367,
-      "rcid": 63,
-      "fid": 3,
+      "field": 467,
+      "rcid": 16,
+      "fid": 1,
       "pid": {
-        "$numberLong": "3386207916315"
+        "$numberLong": "3378320301615"
       },
       "rfid": {
-        "$numberLong": "367120363"
+        "$numberLong": "467120116"
       },
-      "magzpsci": 25.478200912475586,
-      "magzpsciunc": 0.000002799700041578035,
-      "magzpscirms": 0.02182300016283989,
+      "magzpsci": 26.199899673461914,
+      "magzpsciunc": 0.000046699300582986325,
+      "magzpscirms": 0.03891969844698906,
       "exptime": 30,
-      "diffmaglim": 19.774499893188477,
+      "diffmaglim": 18.754600524902344,
       "programid": 1,
-      "jd": 2461140.7079167,
-      "forcediffimflux": -1.6064090728759766,
-      "forcediffimfluxunc": 23.96790313720703,
+      "jd": 2461132.8203009,
+      "forcediffimflux": 68.3699951171875,
+      "forcediffimfluxunc": 138.37454223632812,
       "procstatus": "0",
-      "distnr": 4.310510158538818,
-      "magnr": 21.18000030517578,
-      "sigmagnr": 0.15700000524520874,
-      "chinr": 0.9269999861717224,
-      "sharpnr": -0.29600000381469727,
-      "psfFlux": -375470336,
-      "psfFluxErr": 5602082816,
-      "band": "i"
+      "distnr": 2.672793388366699,
+      "magnr": 22.297000885009766,
+      "sigmagnr": 0.3370000123977661,
+      "chinr": 0.9660000205039978,
+      "sharpnr": -0.5170000195503235,
+      "psfFlux": 8220638208,
+      "psfFluxErr": 16637810688,
+      "band": "g"
     },
     {
-      "field": 367,
-      "rcid": 63,
+      "field": 468,
+      "rcid": 29,
       "fid": 2,
       "pid": {
-        "$numberLong": "3386185756315"
+        "$numberLong": "3373396112915"
       },
       "rfid": {
-        "$numberLong": "367120263"
+        "$numberLong": "468120229"
       },
-      "magzpsci": 26.140600204467773,
-      "magzpsciunc": 0.000009829599548538681,
-      "magzpscirms": 0.027491100132465363,
+      "magzpsci": 26.09910011291504,
+      "magzpsciunc": 0.00002469930041115731,
+      "magzpscirms": 0.03822930157184601,
       "exptime": 30,
-      "diffmaglim": 20.172399520874023,
+      "diffmaglim": 18.997100830078125,
       "programid": 1,
-      "jd": 2461140.6857523,
-      "forcediffimflux": 23.92118263244629,
-      "forcediffimfluxunc": 34.53832244873047,
+      "jd": 2461127.8961111,
+      "forcediffimflux": 54.75037384033203,
+      "forcediffimfluxunc": 80.10723876953125,
       "procstatus": "0",
-      "distnr": 3.271095037460327,
-      "magnr": 22.060998916625977,
-      "sigmagnr": 0.33899998664855957,
-      "chinr": 1.2899999618530273,
-      "sharpnr": -0.6179999709129333,
-      "psfFlux": 3037682688,
-      "psfFluxErr": 4385923072,
+      "distnr": 3.33778977394104,
+      "magnr": 22.64900016784668,
+      "sigmagnr": 0.32499998807907104,
+      "chinr": 1.1979999542236328,
+      "sharpnr": -0.382999986410141,
+      "psfFlux": 7223486976,
+      "psfFluxErr": 10568943616,
       "band": "r"
     },
     {
-      "field": 367,
-      "rcid": 63,
+      "field": 467,
+      "rcid": 16,
       "fid": 3,
       "pid": {
-        "$numberLong": "3385253466315"
+        "$numberLong": "3372232731615"
       },
       "rfid": {
-        "$numberLong": "367120363"
+        "$numberLong": "467120316"
       },
-      "magzpsci": 25.41200065612793,
-      "magzpsciunc": 0.000004282000190869439,
-      "magzpscirms": 0.0269910991191864,
+      "magzpsci": 25.701099395751953,
+      "magzpsciunc": 0.0000035810001008940162,
+      "magzpscirms": 0.024413399398326874,
       "exptime": 30,
-      "diffmaglim": 19.502899169921875,
+      "diffmaglim": 19.731300354003906,
       "programid": 1,
-      "jd": 2461139.7534606,
-      "forcediffimflux": 6.267755508422852,
-      "forcediffimfluxunc": 27.24091911315918,
-      "procstatus": "0",
-      "distnr": 4.310510158538818,
-      "magnr": 21.18000030517578,
-      "sigmagnr": 0.15700000524520874,
-      "chinr": 0.9269999861717224,
-      "sharpnr": -0.29600000381469727,
-      "psfFlux": 1557082496,
-      "psfFluxErr": 6767392256,
-      "band": "i"
-    },
-    {
-      "field": 367,
-      "rcid": 63,
-      "fid": 1,
-      "pid": {
-        "$numberLong": "3385230816315"
-      },
-      "rfid": {
-        "$numberLong": "367120163"
-      },
-      "magzpsci": 26.206100463867188,
-      "magzpsciunc": 0.000010554000255069695,
-      "magzpscirms": 0.028511200100183487,
-      "exptime": 30,
-      "diffmaglim": 20.359899520874023,
-      "programid": 1,
-      "jd": 2461139.7308102,
-      "forcediffimflux": -2.749094247817993,
-      "forcediffimfluxunc": 24.778484344482422,
+      "jd": 2461126.7327315,
+      "forcediffimflux": 4.622076511383057,
+      "forcediffimfluxunc": 30.473405838012695,
       "procstatus": "0",
       "distnr": -99999,
       "magnr": -99999,
       "sigmagnr": -99999,
       "chinr": -99999,
       "sharpnr": -99999,
-      "psfFlux": -328661856,
-      "psfFluxErr": 2962336512,
+      "psfFlux": 879826880,
+      "psfFluxErr": 5800709120,
+      "band": "i"
+    },
+    {
+      "field": 468,
+      "rcid": 29,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3371266682915"
+      },
+      "rfid": {
+        "$numberLong": "468120329"
+      },
+      "magzpsci": 25.737300872802734,
+      "magzpsciunc": 0.0000047280000217142515,
+      "magzpscirms": 0.02572469972074032,
+      "exptime": 30,
+      "diffmaglim": 19.698299407958984,
+      "programid": 1,
+      "jd": 2461125.7666898,
+      "forcediffimflux": -37.8563117980957,
+      "forcediffimfluxunc": 34.9553108215332,
+      "procstatus": "0",
+      "distnr": -99999,
+      "magnr": -99999,
+      "sigmagnr": -99999,
+      "chinr": -99999,
+      "sharpnr": -99999,
+      "psfFlux": -6969759744,
+      "psfFluxErr": 6435653632,
+      "band": "i"
+    },
+    {
+      "field": 468,
+      "rcid": 29,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3371211732915"
+      },
+      "rfid": {
+        "$numberLong": "468120229"
+      },
+      "magzpsci": 26.30579948425293,
+      "magzpsciunc": 0.000011532600183272734,
+      "magzpscirms": 0.026080699637532234,
+      "exptime": 30,
+      "diffmaglim": 19.984100341796875,
+      "programid": 1,
+      "jd": 2461125.7117361,
+      "forcediffimflux": -0.20658870041370392,
+      "forcediffimfluxunc": 41.03914260864258,
+      "procstatus": "0",
+      "distnr": 3.33778977394104,
+      "magnr": 22.64900016784668,
+      "sigmagnr": 0.32499998807907104,
+      "chinr": 1.1979999542236328,
+      "sharpnr": -0.382999986410141,
+      "psfFlux": -22531320,
+      "psfFluxErr": 4475878912,
+      "band": "r"
+    },
+    {
+      "field": 468,
+      "rcid": 29,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3369199352915"
+      },
+      "rfid": {
+        "$numberLong": "468120229"
+      },
+      "magzpsci": 26.297199249267578,
+      "magzpsciunc": 0.000009890900400932878,
+      "magzpscirms": 0.024388199672102928,
+      "exptime": 30,
+      "diffmaglim": 20.4950008392334,
+      "programid": 1,
+      "jd": 2461123.6993519,
+      "forcediffimflux": -29.05854034423828,
+      "forcediffimfluxunc": 27.073020935058594,
+      "procstatus": "0",
+      "distnr": 3.33778977394104,
+      "magnr": 22.64900016784668,
+      "sigmagnr": 0.32499998807907104,
+      "chinr": 1.1979999542236328,
+      "sharpnr": -0.382999986410141,
+      "psfFlux": -3194434048,
+      "psfFluxErr": 2976164096,
+      "band": "r"
+    },
+    {
+      "field": 468,
+      "rcid": 29,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3368296372915"
+      },
+      "rfid": {
+        "$numberLong": "468120129"
+      },
+      "magzpsci": 26.30419921875,
+      "magzpsciunc": 0.000018790800822898746,
+      "magzpscirms": 0.033316098153591156,
+      "exptime": 30,
+      "diffmaglim": 20.5314998626709,
+      "programid": 1,
+      "jd": 2461122.7963773,
+      "forcediffimflux": -3.560354471206665,
+      "forcediffimfluxunc": 25.393674850463867,
+      "procstatus": "0",
+      "distnr": -99999,
+      "magnr": -99999,
+      "sigmagnr": -99999,
+      "chinr": -99999,
+      "sharpnr": -99999,
+      "psfFlux": -388878016,
+      "psfFluxErr": 2773612032,
       "band": "g"
     },
     {
-      "field": 367,
-      "rcid": 63,
+      "field": 468,
+      "rcid": 29,
       "fid": 3,
       "pid": {
-        "$numberLong": "3384246776315"
+        "$numberLong": "3368278072915"
       },
       "rfid": {
-        "$numberLong": "367120363"
+        "$numberLong": "468120329"
       },
-      "magzpsci": 25.47800064086914,
-      "magzpsciunc": 0.000002923299916801625,
-      "magzpscirms": 0.022427499294281006,
+      "magzpsci": 25.716400146484375,
+      "magzpsciunc": 0.0000037909999264229555,
+      "magzpscirms": 0.022695399820804596,
       "exptime": 30,
-      "diffmaglim": 19.658700942993164,
+      "diffmaglim": 20.094200134277344,
       "programid": 1,
-      "jd": 2461138.7467708,
-      "forcediffimflux": 11.999906539916992,
-      "forcediffimfluxunc": 25.392690658569336,
+      "jd": 2461122.7780787,
+      "forcediffimflux": -37.13454818725586,
+      "forcediffimfluxunc": 21.88840103149414,
       "procstatus": "0",
-      "distnr": 4.310510158538818,
-      "magnr": 21.18000030517578,
-      "sigmagnr": 0.15700000524520874,
-      "chinr": 0.9269999861717224,
-      "sharpnr": -0.29600000381469727,
-      "psfFlux": 2805287936,
-      "psfFluxErr": 5936197120,
+      "distnr": -99999,
+      "magnr": -99999,
+      "sigmagnr": -99999,
+      "chinr": -99999,
+      "sharpnr": -99999,
+      "psfFlux": -6969761792,
+      "psfFluxErr": 4108221184,
       "band": "i"
+    },
+    {
+      "field": 468,
+      "rcid": 29,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3368263882915"
+      },
+      "rfid": {
+        "$numberLong": "468120229"
+      },
+      "magzpsci": 26.279699325561523,
+      "magzpsciunc": 0.00001188809983432293,
+      "magzpscirms": 0.02655239962041378,
+      "exptime": 30,
+      "diffmaglim": 20.47450065612793,
+      "programid": 1,
+      "jd": 2461122.7638889,
+      "forcediffimflux": 42.92879104614258,
+      "forcediffimfluxunc": 23.87143325805664,
+      "procstatus": "0",
+      "distnr": 3.33778977394104,
+      "magnr": 22.64900016784668,
+      "sigmagnr": 0.32499998807907104,
+      "chinr": 1.1979999542236328,
+      "sharpnr": -0.382999986410141,
+      "psfFlux": 4795885056,
+      "psfFluxErr": 2666850048,
+      "band": "r"
+    },
+    {
+      "field": 467,
+      "rcid": 16,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3367278351615"
+      },
+      "rfid": {
+        "$numberLong": "467120316"
+      },
+      "magzpsci": 25.46769905090332,
+      "magzpsciunc": 0.0000043302998165017925,
+      "magzpscirms": 0.026763400062918663,
+      "exptime": 30,
+      "diffmaglim": 19.800399780273438,
+      "programid": 1,
+      "jd": 2461121.7783565,
+      "forcediffimflux": -12.967853546142578,
+      "forcediffimfluxunc": 20.110090255737305,
+      "procstatus": "0",
+      "distnr": -99999,
+      "magnr": -99999,
+      "sigmagnr": -99999,
+      "chinr": -99999,
+      "sharpnr": -99999,
+      "psfFlux": -3060471296,
+      "psfFluxErr": 4746071040,
+      "band": "i"
+    },
+    {
+      "field": 467,
+      "rcid": 16,
+      "fid": 1,
+      "pid": {
+        "$numberLong": "3366338481615"
+      },
+      "rfid": {
+        "$numberLong": "467120116"
+      },
+      "magzpsci": 26.23310089111328,
+      "magzpsciunc": 0.000015054900359245948,
+      "magzpscirms": 0.032708000391721725,
+      "exptime": 30,
+      "diffmaglim": 20.348100662231445,
+      "programid": 1,
+      "jd": 2461120.8384838,
+      "forcediffimflux": -21.242414474487305,
+      "forcediffimfluxunc": 27.04587173461914,
+      "procstatus": "0",
+      "distnr": 2.672793388366699,
+      "magnr": 22.297000885009766,
+      "sigmagnr": 0.3370000123977661,
+      "chinr": 0.9660000205039978,
+      "sharpnr": -0.5170000195503235,
+      "psfFlux": -2477213184,
+      "psfFluxErr": 3153991168,
+      "band": "g"
+    },
+    {
+      "field": 467,
+      "rcid": 16,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3366298221615"
+      },
+      "rfid": {
+        "$numberLong": "467120216"
+      },
+      "magzpsci": 26.26569938659668,
+      "magzpsciunc": 0.000007470100172213279,
+      "magzpscirms": 0.02277440018951893,
+      "exptime": 30,
+      "diffmaglim": 20.40530014038086,
+      "programid": 1,
+      "jd": 2461120.7982292,
+      "forcediffimflux": -8.84714126586914,
+      "forcediffimfluxunc": 27.50235939025879,
+      "procstatus": "0",
+      "distnr": -99999,
+      "magnr": -99999,
+      "sigmagnr": -99999,
+      "chinr": -99999,
+      "sharpnr": -99999,
+      "psfFlux": -1001205120,
+      "psfFluxErr": 3112361472,
+      "band": "r"
+    },
+    {
+      "field": 468,
+      "rcid": 29,
+      "fid": 3,
+      "pid": {
+        "$numberLong": "3365328802915"
+      },
+      "rfid": {
+        "$numberLong": "468120329"
+      },
+      "magzpsci": 25.753400802612305,
+      "magzpsciunc": 0.0000030389001040020958,
+      "magzpscirms": 0.02070230059325695,
+      "exptime": 30,
+      "diffmaglim": 19.985300064086914,
+      "programid": 1,
+      "jd": 2461119.8288079,
+      "forcediffimflux": -80.67335510253906,
+      "forcediffimfluxunc": 24.78480339050293,
+      "procstatus": "0",
+      "distnr": -99999,
+      "magnr": -99999,
+      "sigmagnr": -99999,
+      "chinr": -99999,
+      "sharpnr": -99999,
+      "magpsf": 20.986576080322266,
+      "sigmapsf": 0.3335643708705902,
+      "psfFlux": -14634222592,
+      "psfFluxErr": 4495986688,
+      "isdiffpos": false,
+      "snr_psf": 3.2549524307250977,
+      "band": "i"
+    },
+    {
+      "field": 468,
+      "rcid": 29,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3365233462915"
+      },
+      "rfid": {
+        "$numberLong": "468120229"
+      },
+      "magzpsci": 26.30620002746582,
+      "magzpsciunc": 0.000007308699878194602,
+      "magzpscirms": 0.020926499739289284,
+      "exptime": 30,
+      "diffmaglim": 20.5044002532959,
+      "programid": 1,
+      "jd": 2461119.7334606,
+      "forcediffimflux": 49.55744171142578,
+      "forcediffimfluxunc": 24.839649200439453,
+      "procstatus": "0",
+      "distnr": 3.33778977394104,
+      "magnr": 22.64900016784668,
+      "sigmagnr": 0.32499998807907104,
+      "chinr": 1.1979999542236328,
+      "sharpnr": -0.382999986410141,
+      "psfFlux": 5402921984,
+      "psfFluxErr": 2708103680,
+      "band": "r"
+    },
+    {
+      "field": 467,
+      "rcid": 16,
+      "fid": 2,
+      "pid": {
+        "$numberLong": "3364304681615"
+      },
+      "rfid": {
+        "$numberLong": "467120216"
+      },
+      "magzpsci": 26.261899948120117,
+      "magzpsciunc": 0.000007603399808431277,
+      "magzpscirms": 0.023108499124646187,
+      "exptime": 30,
+      "diffmaglim": 20.376300811767578,
+      "programid": 1,
+      "jd": 2461118.8046875,
+      "forcediffimflux": 3.241230010986328,
+      "forcediffimfluxunc": 26.282791137695312,
+      "procstatus": "0",
+      "distnr": -99999,
+      "magnr": -99999,
+      "sigmagnr": -99999,
+      "chinr": -99999,
+      "sharpnr": -99999,
+      "psfFlux": 368086368,
+      "psfFluxErr": 2984773376,
+      "band": "r"
     }
   ],
   "cross_matches": {
-    "NED": [],
-    "AllWISE": [
-      {
-        "_id": "1586m076_ac51-038206",
-        "ra": 157.9425368,
-        "dec": -7.6681575,
-        "w1mpro": 17.571,
-        "w2mpro": 16.918,
-        "w3mpro": 12.475,
-        "w4mpro": 8.668,
-        "distance_arcsec": 1.3796438874500856
-      }
-    ],
-    "CatWISE2020": [],
-    "Gaia_DR3": [],
     "milliquas_v8": [],
+    "NED": [],
     "2MASS_PSC": [],
     "GALEX": [],
     "TNS": [],
-    "VSX": []
+    "Gaia_DR3": [],
+    "VSX": [],
+    "CatWISE2020": []
   },
   "aliases": {
     "LSST": [],
@@ -2463,13 +2336,13 @@
     "radec_geojson": {
       "type": "Point",
       "coordinates": [
-        -22.057841200000013,
-        -7.6680767
+        -32.197599999999994,
+        4.153344
       ]
     },
-    "l": -106.2883816940451,
-    "b": 41.483307637881296
+    "l": -127.07825351965289,
+    "b": 41.30470581445952
   },
-  "created_at": 2461142.718738426,
-  "updated_at": 2461142.718738426
+  "created_at": 2461134.760324074,
+  "updated_at": 2461134.760324074
 }
