@@ -37,7 +37,7 @@ from oracle.custom_datasets.BTS import (
 )
 from oracle.presets import get_model
 
-MODEL_WEIGHTS = Path(__file__).resolve().parents[2] / "data" / "best_model_f1.pth"
+MODEL_WEIGHTS = Path(__file__).resolve().parents[2] / "data" / "best_model_f1_ztf.pth"
 
 _model = None
 
@@ -50,6 +50,10 @@ def _get_model():
         m.eval()
         _model = m
     return _model
+
+
+def get_taxonomy():
+    return _get_model().taxonomy
 
 
 def run_oracle(ztf_id, prv_candidates, candidate, cross_matches):

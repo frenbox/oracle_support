@@ -1,0 +1,866 @@
+{
+  "_id": "313629129590702081",
+  "prv_candidates": [
+    {
+      "diaSourceId": {
+        "$numberLong": "313629129590702081"
+      },
+      "visit": {
+        "$numberLong": "2025102400259"
+      },
+      "detector": 143,
+      "diaObjectId": {
+        "$numberLong": "313629129590702081"
+      },
+      "parentDiaSourceId": {
+        "$numberLong": "0"
+      },
+      "midpointMjdTai": 60973.16974544763,
+      "ra": 11.040852005026233,
+      "raErr": 0.00003898764407495037,
+      "dec": -45.51930923100073,
+      "decErr": 0.00004380508107715286,
+      "centroid_flag": false,
+      "apFlux": 2826.15087890625,
+      "apFluxErr": 634.8536987304688,
+      "apFlux_flag": false,
+      "apFlux_flag_apertureTruncated": false,
+      "psfFlux": 2447.5986328125,
+      "psfFluxErr": 389.4649353027344,
+      "psfChi2": 1668.0416259765625,
+      "psfNdata": 1681,
+      "psfFlux_flag": false,
+      "psfFlux_flag_edge": false,
+      "psfFlux_flag_noGoodPixels": false,
+      "trailFlux": 2334.553955078125,
+      "trailFluxErr": 30.0268497467041,
+      "trailRa": 11.04085271139511,
+      "trailRaErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailDec": -45.519319191130194,
+      "trailDecErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailLength": 1.0500967502593994,
+      "trailLengthErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailAngle": -178.1488494873047,
+      "trailAngleErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailChi2": {
+        "$numberDouble": "NaN"
+      },
+      "trailNdata": 0,
+      "trail_flag_edge": false,
+      "scienceFlux": 6423.244140625,
+      "scienceFluxErr": 406.8437805175781,
+      "forced_PsfFlux_flag": false,
+      "forced_PsfFlux_flag_edge": false,
+      "forced_PsfFlux_flag_noGoodPixels": false,
+      "templateFlux": 4127.11181640625,
+      "templateFluxErr": 13.967551231384277,
+      "shape_flag": false,
+      "shape_flag_no_pixels": false,
+      "shape_flag_not_contained": false,
+      "shape_flag_parent_source": false,
+      "extendedness": 0.80960613489151,
+      "reliability": 0.975463330745697,
+      "band": "i",
+      "isDipole": false,
+      "pixelFlags": false,
+      "pixelFlags_bad": false,
+      "pixelFlags_cr": false,
+      "pixelFlags_crCenter": false,
+      "pixelFlags_edge": false,
+      "pixelFlags_nodata": false,
+      "pixelFlags_nodataCenter": false,
+      "pixelFlags_interpolated": false,
+      "pixelFlags_interpolatedCenter": false,
+      "pixelFlags_offimage": false,
+      "pixelFlags_saturated": false,
+      "pixelFlags_saturatedCenter": false,
+      "pixelFlags_suspect": false,
+      "pixelFlags_suspectCenter": false,
+      "pixelFlags_streak": false,
+      "pixelFlags_streakCenter": false,
+      "pixelFlags_injected": false,
+      "pixelFlags_injectedCenter": false,
+      "pixelFlags_injected_template": false,
+      "pixelFlags_injected_templateCenter": false,
+      "glint_trail": false,
+      "objectId": "313629129590702081",
+      "jd": 2460973.669317207,
+      "magpsf": 22.928150177001953,
+      "sigmapsf": 0.17276369035243988,
+      "diffmaglim": 23.176403045654297,
+      "isdiffpos": true,
+      "snr": 6.284515857696533,
+      "magap": 22.772010803222656,
+      "sigmagap": 0.24389483034610748
+    },
+    {
+      "diaSourceId": {
+        "$numberLong": "313637921201061964"
+      },
+      "visit": {
+        "$numberLong": "2025102600226"
+      },
+      "detector": 41,
+      "diaObjectId": {
+        "$numberLong": "313629129590702081"
+      },
+      "parentDiaSourceId": {
+        "$numberLong": "0"
+      },
+      "midpointMjdTai": 60975.153260584724,
+      "ra": 11.040839262069854,
+      "raErr": 0.000030818089726381004,
+      "dec": -45.519290422803245,
+      "decErr": 0.000030300909202196635,
+      "centroid_flag": false,
+      "apFlux": 2664.360595703125,
+      "apFluxErr": 927.9340209960938,
+      "apFlux_flag": false,
+      "apFlux_flag_apertureTruncated": false,
+      "psfFlux": 2729.226318359375,
+      "psfFluxErr": 390.76666259765625,
+      "psfChi2": 1665.02197265625,
+      "psfNdata": 1681,
+      "psfFlux_flag": false,
+      "psfFlux_flag_edge": false,
+      "psfFlux_flag_noGoodPixels": false,
+      "trailFlux": 2906.579345703125,
+      "trailFluxErr": 4.691703796386719,
+      "trailRa": 11.040864478264307,
+      "trailRaErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailDec": -45.51930621055066,
+      "trailDecErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailLength": 1.2937824726104736,
+      "trailLengthErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailAngle": 154.54302978515625,
+      "trailAngleErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailChi2": {
+        "$numberDouble": "NaN"
+      },
+      "trailNdata": 0,
+      "trail_flag_edge": false,
+      "scienceFlux": 6087.5205078125,
+      "scienceFluxErr": 399.5716552734375,
+      "forced_PsfFlux_flag": false,
+      "forced_PsfFlux_flag_edge": false,
+      "forced_PsfFlux_flag_noGoodPixels": false,
+      "templateFlux": 3318.462890625,
+      "templateFluxErr": 84.11455535888672,
+      "shape_flag": false,
+      "shape_flag_no_pixels": false,
+      "shape_flag_not_contained": false,
+      "shape_flag_parent_source": false,
+      "extendedness": 0.5163570046424866,
+      "reliability": 0.9986605644226074,
+      "band": "i",
+      "isDipole": false,
+      "pixelFlags": false,
+      "pixelFlags_bad": false,
+      "pixelFlags_cr": false,
+      "pixelFlags_crCenter": false,
+      "pixelFlags_edge": false,
+      "pixelFlags_nodata": false,
+      "pixelFlags_nodataCenter": false,
+      "pixelFlags_interpolated": false,
+      "pixelFlags_interpolatedCenter": false,
+      "pixelFlags_offimage": false,
+      "pixelFlags_saturated": false,
+      "pixelFlags_saturatedCenter": false,
+      "pixelFlags_suspect": false,
+      "pixelFlags_suspectCenter": false,
+      "pixelFlags_streak": false,
+      "pixelFlags_streakCenter": false,
+      "pixelFlags_injected": false,
+      "pixelFlags_injectedCenter": false,
+      "pixelFlags_injected_template": false,
+      "pixelFlags_injected_templateCenter": false,
+      "glint_trail": false,
+      "objectId": "313629129590702081",
+      "jd": 2460975.6528323437,
+      "magpsf": 22.80990219116211,
+      "sigmapsf": 0.1554541289806366,
+      "diffmaglim": 23.172780990600586,
+      "isdiffpos": true,
+      "snr": 6.984286308288574,
+      "magap": 22.836017608642578,
+      "sigmagap": 0.3781363070011139
+    },
+    {
+      "diaSourceId": {
+        "$numberLong": "313637921335279701"
+      },
+      "visit": {
+        "$numberLong": "2025102600227"
+      },
+      "detector": 41,
+      "diaObjectId": {
+        "$numberLong": "313629129590702081"
+      },
+      "parentDiaSourceId": {
+        "$numberLong": "0"
+      },
+      "midpointMjdTai": 60975.15370186785,
+      "ra": 11.040862621308632,
+      "raErr": 0.00002469063656462822,
+      "dec": -45.51930681939412,
+      "decErr": 0.000024625669539091177,
+      "centroid_flag": false,
+      "apFlux": 3248.2265625,
+      "apFluxErr": 916.3944702148438,
+      "apFlux_flag": false,
+      "apFlux_flag_apertureTruncated": false,
+      "psfFlux": 3385.53662109375,
+      "psfFluxErr": 364.7550354003906,
+      "psfChi2": 1737.5450439453125,
+      "psfNdata": 1681,
+      "psfFlux_flag": false,
+      "psfFlux_flag_edge": false,
+      "psfFlux_flag_noGoodPixels": false,
+      "trailFlux": 3397.900390625,
+      "trailFluxErr": 0.4195781648159027,
+      "trailRa": 11.040875393700878,
+      "trailRaErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailDec": -45.51931224798279,
+      "trailDecErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailLength": 0.7339270114898682,
+      "trailLengthErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailAngle": -151.08592224121094,
+      "trailAngleErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailChi2": {
+        "$numberDouble": "NaN"
+      },
+      "trailNdata": 0,
+      "trail_flag_edge": false,
+      "scienceFlux": 6651.66259765625,
+      "scienceFluxErr": 373.64111328125,
+      "forced_PsfFlux_flag": false,
+      "forced_PsfFlux_flag_edge": false,
+      "forced_PsfFlux_flag_noGoodPixels": false,
+      "templateFlux": 3251.607666015625,
+      "templateFluxErr": 92.66205596923828,
+      "shape_flag": false,
+      "shape_flag_no_pixels": false,
+      "shape_flag_not_contained": false,
+      "shape_flag_parent_source": false,
+      "extendedness": 0.07124705612659454,
+      "reliability": 0.9997393488883972,
+      "band": "i",
+      "isDipole": false,
+      "pixelFlags": false,
+      "pixelFlags_bad": false,
+      "pixelFlags_cr": false,
+      "pixelFlags_crCenter": false,
+      "pixelFlags_edge": false,
+      "pixelFlags_nodata": false,
+      "pixelFlags_nodataCenter": false,
+      "pixelFlags_interpolated": false,
+      "pixelFlags_interpolatedCenter": false,
+      "pixelFlags_offimage": false,
+      "pixelFlags_saturated": false,
+      "pixelFlags_saturatedCenter": false,
+      "pixelFlags_suspect": false,
+      "pixelFlags_suspectCenter": false,
+      "pixelFlags_streak": false,
+      "pixelFlags_streakCenter": false,
+      "pixelFlags_injected": false,
+      "pixelFlags_injectedCenter": false,
+      "pixelFlags_injected_template": false,
+      "pixelFlags_injected_templateCenter": false,
+      "glint_trail": false,
+      "objectId": "313629129590702081",
+      "jd": 2460975.6532736267,
+      "magpsf": 22.575931549072266,
+      "sigmapsf": 0.11697635799646378,
+      "diffmaglim": 23.247570037841797,
+      "isdiffpos": true,
+      "snr": 9.281672477722168,
+      "magap": 22.62088394165039,
+      "sigmagap": 0.3063094913959503
+    },
+    {
+      "diaSourceId": {
+        "$numberLong": "313681912115232800"
+      },
+      "visit": {
+        "$numberLong": "2025110500304"
+      },
+      "detector": 3,
+      "diaObjectId": {
+        "$numberLong": "313629129590702081"
+      },
+      "parentDiaSourceId": {
+        "$numberLong": "0"
+      },
+      "midpointMjdTai": 60985.23629868943,
+      "ra": 11.040854774681113,
+      "raErr": 0.00004029983392683789,
+      "dec": -45.51933599650048,
+      "decErr": 0.00006106781074777246,
+      "centroid_flag": false,
+      "apFlux": 3113.006103515625,
+      "apFluxErr": 1081.0992431640625,
+      "apFlux_flag": false,
+      "apFlux_flag_apertureTruncated": false,
+      "psfFlux": 3776.599365234375,
+      "psfFluxErr": 686.3206176757812,
+      "psfChi2": 1610.7239990234375,
+      "psfNdata": 1681,
+      "psfFlux_flag": false,
+      "psfFlux_flag_edge": false,
+      "psfFlux_flag_noGoodPixels": false,
+      "trailFlux": 3873.712158203125,
+      "trailFluxErr": 149.51104736328125,
+      "trailRa": 11.040916746402976,
+      "trailRaErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailDec": -45.519352418465616,
+      "trailDecErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailLength": 1.8051540851593018,
+      "trailLengthErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailAngle": -165.02377319335938,
+      "trailAngleErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailChi2": {
+        "$numberDouble": "NaN"
+      },
+      "trailNdata": 0,
+      "trail_flag_edge": false,
+      "scienceFlux": 8044.369140625,
+      "scienceFluxErr": 712.419921875,
+      "forced_PsfFlux_flag": false,
+      "forced_PsfFlux_flag_edge": false,
+      "forced_PsfFlux_flag_noGoodPixels": false,
+      "templateFlux": 3993.58544921875,
+      "templateFluxErr": 9.951323509216309,
+      "shape_flag": false,
+      "shape_flag_no_pixels": false,
+      "shape_flag_not_contained": false,
+      "shape_flag_parent_source": false,
+      "extendedness": 0.7832298278808594,
+      "reliability": 0.9932877421379089,
+      "band": "i",
+      "isDipole": false,
+      "pixelFlags": false,
+      "pixelFlags_bad": false,
+      "pixelFlags_cr": false,
+      "pixelFlags_crCenter": false,
+      "pixelFlags_edge": false,
+      "pixelFlags_nodata": false,
+      "pixelFlags_nodataCenter": false,
+      "pixelFlags_interpolated": false,
+      "pixelFlags_interpolatedCenter": false,
+      "pixelFlags_offimage": false,
+      "pixelFlags_saturated": false,
+      "pixelFlags_saturatedCenter": false,
+      "pixelFlags_suspect": false,
+      "pixelFlags_suspectCenter": false,
+      "pixelFlags_streak": false,
+      "pixelFlags_streakCenter": false,
+      "pixelFlags_injected": false,
+      "pixelFlags_injectedCenter": false,
+      "pixelFlags_injected_template": false,
+      "pixelFlags_injected_templateCenter": false,
+      "glint_trail": false,
+      "objectId": "313629129590702081",
+      "jd": 2460985.7358704484,
+      "magpsf": 22.457246780395508,
+      "sigmapsf": 0.19731061160564423,
+      "diffmaglim": 22.561256408691406,
+      "isdiffpos": true,
+      "snr": 5.5026750564575195,
+      "magap": 22.667049407958984,
+      "sigmagap": 0.3770594894886017
+    },
+    {
+      "diaSourceId": {
+        "$numberLong": "313695087610560739"
+      },
+      "visit": {
+        "$numberLong": "2025110800165"
+      },
+      "detector": 26,
+      "diaObjectId": {
+        "$numberLong": "313629129590702081"
+      },
+      "parentDiaSourceId": {
+        "$numberLong": "0"
+      },
+      "midpointMjdTai": 60988.12353523034,
+      "ra": 11.04088253143395,
+      "raErr": 0.00003402556831133552,
+      "dec": -45.51925380380172,
+      "decErr": 0.00004414777140482329,
+      "centroid_flag": false,
+      "apFlux": 780.8018798828125,
+      "apFluxErr": 429.8286437988281,
+      "apFlux_flag": false,
+      "apFlux_flag_apertureTruncated": false,
+      "psfFlux": 916.96533203125,
+      "psfFluxErr": 177.333251953125,
+      "psfChi2": 800.6980590820312,
+      "psfNdata": 1681,
+      "psfFlux_flag": false,
+      "psfFlux_flag_edge": false,
+      "psfFlux_flag_noGoodPixels": false,
+      "trailFlux": 1029.9959716796875,
+      "trailFluxErr": 8.63584041595459,
+      "trailRa": 11.04085993733823,
+      "trailRaErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailDec": -45.5192477767603,
+      "trailDecErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailLength": 1.3952337503433228,
+      "trailLengthErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailAngle": -89.51535034179688,
+      "trailAngleErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailChi2": {
+        "$numberDouble": "NaN"
+      },
+      "trailNdata": 0,
+      "trail_flag_edge": false,
+      "scienceFlux": 5092.87060546875,
+      "scienceFluxErr": 154.99258422851562,
+      "forced_PsfFlux_flag": false,
+      "forced_PsfFlux_flag_edge": false,
+      "forced_PsfFlux_flag_noGoodPixels": false,
+      "templateFlux": 4127.0166015625,
+      "templateFluxErr": 131.67532348632812,
+      "shape_flag": false,
+      "shape_flag_no_pixels": false,
+      "shape_flag_not_contained": false,
+      "shape_flag_parent_source": false,
+      "extendedness": 0.8543663024902344,
+      "reliability": 0.7161354422569275,
+      "band": "r",
+      "isDipole": false,
+      "pixelFlags": false,
+      "pixelFlags_bad": false,
+      "pixelFlags_cr": false,
+      "pixelFlags_crCenter": false,
+      "pixelFlags_edge": false,
+      "pixelFlags_nodata": false,
+      "pixelFlags_nodataCenter": false,
+      "pixelFlags_interpolated": false,
+      "pixelFlags_interpolatedCenter": false,
+      "pixelFlags_offimage": false,
+      "pixelFlags_saturated": false,
+      "pixelFlags_saturatedCenter": false,
+      "pixelFlags_suspect": false,
+      "pixelFlags_suspectCenter": false,
+      "pixelFlags_streak": false,
+      "pixelFlags_streakCenter": false,
+      "pixelFlags_injected": false,
+      "pixelFlags_injectedCenter": false,
+      "pixelFlags_injected_template": false,
+      "pixelFlags_injected_templateCenter": false,
+      "glint_trail": false,
+      "objectId": "313629129590702081",
+      "jd": 2460988.6231069895,
+      "magpsf": 23.994117736816406,
+      "sigmapsf": 0.209972083568573,
+      "diffmaglim": 24.03059959411621,
+      "isdiffpos": true,
+      "snr": 5.170859336853027,
+      "magap": 24.16864776611328,
+      "sigmagap": 0.5976938605308533
+    },
+    {
+      "diaSourceId": {
+        "$numberLong": "313708286172463112"
+      },
+      "visit": {
+        "$numberLong": "2025111100198"
+      },
+      "detector": 13,
+      "diaObjectId": {
+        "$numberLong": "313629129590702081"
+      },
+      "parentDiaSourceId": {
+        "$numberLong": "0"
+      },
+      "midpointMjdTai": 60991.242804659065,
+      "ra": 11.040889918645982,
+      "raErr": 0.000046906287025194615,
+      "dec": -45.51931177306775,
+      "decErr": 0.00004267399708623998,
+      "centroid_flag": false,
+      "apFlux": 2694.820556640625,
+      "apFluxErr": 643.9850463867188,
+      "apFlux_flag": false,
+      "apFlux_flag_apertureTruncated": false,
+      "psfFlux": 1949.4010009765625,
+      "psfFluxErr": 319.4267578125,
+      "psfChi2": 1621.1827392578125,
+      "psfNdata": 1681,
+      "psfFlux_flag": false,
+      "psfFlux_flag_edge": false,
+      "psfFlux_flag_noGoodPixels": false,
+      "trailFlux": 2421.2607421875,
+      "trailFluxErr": 18.032052993774414,
+      "trailRa": 11.040914710277775,
+      "trailRaErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailDec": -45.519322760125924,
+      "trailDecErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailLength": 2.3874354362487793,
+      "trailLengthErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailAngle": -158.55203247070312,
+      "trailAngleErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailChi2": {
+        "$numberDouble": "NaN"
+      },
+      "trailNdata": 0,
+      "trail_flag_edge": false,
+      "scienceFlux": 5800.5400390625,
+      "scienceFluxErr": 323.0024719238281,
+      "forced_PsfFlux_flag": false,
+      "forced_PsfFlux_flag_edge": false,
+      "forced_PsfFlux_flag_noGoodPixels": false,
+      "templateFlux": 3803.7763671875,
+      "templateFluxErr": 39.1070442199707,
+      "shape_flag": false,
+      "shape_flag_no_pixels": false,
+      "shape_flag_not_contained": false,
+      "shape_flag_parent_source": false,
+      "extendedness": 0.9360494613647461,
+      "reliability": 0.9383352398872375,
+      "band": "i",
+      "isDipole": false,
+      "pixelFlags": false,
+      "pixelFlags_bad": false,
+      "pixelFlags_cr": false,
+      "pixelFlags_crCenter": false,
+      "pixelFlags_edge": false,
+      "pixelFlags_nodata": false,
+      "pixelFlags_nodataCenter": false,
+      "pixelFlags_interpolated": false,
+      "pixelFlags_interpolatedCenter": false,
+      "pixelFlags_offimage": false,
+      "pixelFlags_saturated": false,
+      "pixelFlags_saturatedCenter": false,
+      "pixelFlags_suspect": false,
+      "pixelFlags_suspectCenter": false,
+      "pixelFlags_streak": false,
+      "pixelFlags_streakCenter": false,
+      "pixelFlags_injected": false,
+      "pixelFlags_injectedCenter": false,
+      "pixelFlags_injected_template": false,
+      "pixelFlags_injected_templateCenter": false,
+      "glint_trail": false,
+      "objectId": "313629129590702081",
+      "jd": 2460991.7423764183,
+      "magpsf": 23.175247192382812,
+      "sigmapsf": 0.1779075562953949,
+      "diffmaglim": 23.391647338867188,
+      "isdiffpos": true,
+      "snr": 6.102810382843018,
+      "magap": 22.82367515563965,
+      "sigmagap": 0.25945988297462463
+    },
+    {
+      "diaSourceId": {
+        "$numberLong": "313721480853061901"
+      },
+      "visit": {
+        "$numberLong": "2025111400202"
+      },
+      "detector": 21,
+      "diaObjectId": {
+        "$numberLong": "313629129590702081"
+      },
+      "parentDiaSourceId": {
+        "$numberLong": "0"
+      },
+      "midpointMjdTai": 60994.144786691875,
+      "ra": 11.040809864058682,
+      "raErr": 0.00001742839958751574,
+      "dec": -45.51928455694511,
+      "decErr": 0.00002508338184270542,
+      "centroid_flag": false,
+      "apFlux": 1433.2100830078125,
+      "apFluxErr": 589.4808959960938,
+      "apFlux_flag": false,
+      "apFlux_flag_apertureTruncated": false,
+      "psfFlux": 1545.1787109375,
+      "psfFluxErr": 192.29872131347656,
+      "psfChi2": 1621.9578857421875,
+      "psfNdata": 1681,
+      "psfFlux_flag": false,
+      "psfFlux_flag_edge": false,
+      "psfFlux_flag_noGoodPixels": false,
+      "trailFlux": 1716.5040283203125,
+      "trailFluxErr": 24.463031768798828,
+      "trailRa": 11.040833577599376,
+      "trailRaErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailDec": -45.51927431093836,
+      "trailDecErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailLength": 1.2439947128295898,
+      "trailLengthErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailAngle": -133.51295471191406,
+      "trailAngleErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailChi2": {
+        "$numberDouble": "NaN"
+      },
+      "trailNdata": 0,
+      "trail_flag_edge": false,
+      "scienceFlux": 4493.89892578125,
+      "scienceFluxErr": 196.85720825195312,
+      "forced_PsfFlux_flag": false,
+      "forced_PsfFlux_flag_edge": false,
+      "forced_PsfFlux_flag_noGoodPixels": false,
+      "templateFlux": 2830.320068359375,
+      "templateFluxErr": 95.60997009277344,
+      "shape_flag": false,
+      "shape_flag_no_pixels": false,
+      "shape_flag_not_contained": false,
+      "shape_flag_parent_source": false,
+      "extendedness": 0.20600660145282745,
+      "reliability": 0.9711067080497742,
+      "band": "i",
+      "isDipole": false,
+      "pixelFlags": false,
+      "pixelFlags_bad": false,
+      "pixelFlags_cr": false,
+      "pixelFlags_crCenter": false,
+      "pixelFlags_edge": false,
+      "pixelFlags_nodata": false,
+      "pixelFlags_nodataCenter": false,
+      "pixelFlags_interpolated": false,
+      "pixelFlags_interpolatedCenter": false,
+      "pixelFlags_offimage": false,
+      "pixelFlags_saturated": false,
+      "pixelFlags_saturatedCenter": false,
+      "pixelFlags_suspect": false,
+      "pixelFlags_suspectCenter": false,
+      "pixelFlags_streak": false,
+      "pixelFlags_streakCenter": false,
+      "pixelFlags_injected": false,
+      "pixelFlags_injectedCenter": false,
+      "pixelFlags_injected_template": false,
+      "pixelFlags_injected_templateCenter": false,
+      "glint_trail": false,
+      "objectId": "313629129590702081",
+      "jd": 2460994.644358451,
+      "magpsf": 23.427553176879883,
+      "sigmapsf": 0.13512073457241058,
+      "diffmaglim": 23.94263458251953,
+      "isdiffpos": true,
+      "snr": 8.035304069519043,
+      "magap": 23.50922393798828,
+      "sigmagap": 0.4465644955635071
+    },
+    {
+      "diaSourceId": {
+        "$numberLong": "313721481610657877"
+      },
+      "visit": {
+        "$numberLong": "2025111400207"
+      },
+      "detector": 186,
+      "diaObjectId": {
+        "$numberLong": "313629129590702081"
+      },
+      "parentDiaSourceId": {
+        "$numberLong": "0"
+      },
+      "midpointMjdTai": 60994.14776559625,
+      "ra": 11.040858902626084,
+      "raErr": 0.000027963935281150043,
+      "dec": -45.51928453740148,
+      "decErr": 0.000028351942091831006,
+      "centroid_flag": false,
+      "apFlux": 907.5343627929688,
+      "apFluxErr": 626.9353637695312,
+      "apFlux_flag": false,
+      "apFlux_flag_apertureTruncated": false,
+      "psfFlux": 1561.45849609375,
+      "psfFluxErr": 209.08950805664062,
+      "psfChi2": 1748.4029541015625,
+      "psfNdata": 1681,
+      "psfFlux_flag": false,
+      "psfFlux_flag_edge": false,
+      "psfFlux_flag_noGoodPixels": false,
+      "trailFlux": 1662.5126953125,
+      "trailFluxErr": 2.375547170639038,
+      "trailRa": 11.040861814428727,
+      "trailRaErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailDec": -45.51928211450687,
+      "trailDecErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailLength": 0.9606189727783203,
+      "trailLengthErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailAngle": -135.4247283935547,
+      "trailAngleErr": {
+        "$numberDouble": "NaN"
+      },
+      "trailChi2": {
+        "$numberDouble": "NaN"
+      },
+      "trailNdata": 0,
+      "trail_flag_edge": false,
+      "scienceFlux": 4755.68310546875,
+      "scienceFluxErr": 208.774658203125,
+      "forced_PsfFlux_flag": false,
+      "forced_PsfFlux_flag_edge": false,
+      "forced_PsfFlux_flag_noGoodPixels": false,
+      "templateFlux": 3163.98193359375,
+      "templateFluxErr": 84.19737243652344,
+      "shape_flag": false,
+      "shape_flag_no_pixels": false,
+      "shape_flag_not_contained": false,
+      "shape_flag_parent_source": false,
+      "extendedness": 0.3832082748413086,
+      "reliability": 0.9894212484359741,
+      "band": "i",
+      "isDipole": false,
+      "pixelFlags": false,
+      "pixelFlags_bad": false,
+      "pixelFlags_cr": false,
+      "pixelFlags_crCenter": false,
+      "pixelFlags_edge": false,
+      "pixelFlags_nodata": false,
+      "pixelFlags_nodataCenter": false,
+      "pixelFlags_interpolated": false,
+      "pixelFlags_interpolatedCenter": false,
+      "pixelFlags_offimage": false,
+      "pixelFlags_saturated": false,
+      "pixelFlags_saturatedCenter": false,
+      "pixelFlags_suspect": false,
+      "pixelFlags_suspectCenter": false,
+      "pixelFlags_streak": false,
+      "pixelFlags_streakCenter": false,
+      "pixelFlags_injected": false,
+      "pixelFlags_injectedCenter": false,
+      "pixelFlags_injected_template": false,
+      "pixelFlags_injected_templateCenter": false,
+      "glint_trail": false,
+      "objectId": "313629129590702081",
+      "jd": 2460994.647337355,
+      "magpsf": 23.41617202758789,
+      "sigmapsf": 0.1453871726989746,
+      "diffmaglim": 23.851743698120117,
+      "isdiffpos": true,
+      "snr": 7.467895030975342,
+      "magap": 24.005342483520508,
+      "sigmagap": 0.7500392198562622
+    }
+  ],
+  "fp_hists": [],
+  "is_sso": false,
+  "cross_matches": {
+    "NED": [],
+    "CatWISE2020": [],
+    "LSPSC": [
+      {
+        "_id": {
+          "$numberLong": "10995215715271117"
+        },
+        "ra": 11.040986061096191,
+        "dec": -45.51921463012695,
+        "mag_white": 22.530000686645508,
+        "score": 0.000699999975040555,
+        "distance_arcsec": 0.4799217342619333
+      },
+      {
+        "_id": {
+          "$numberLong": "10995215715271125"
+        },
+        "ra": 11.041250228881836,
+        "dec": -45.518375396728516,
+        "mag_white": 24.31999969482422,
+        "score": 0.0052999998442828655,
+        "distance_arcsec": 3.5086642446404075
+      },
+      {
+        "_id": {
+          "$numberLong": "10995215715271137"
+        },
+        "ra": 11.041524887084961,
+        "dec": -45.52088928222656,
+        "mag_white": 24.829999923706055,
+        "score": 0.013399999588727951,
+        "distance_arcsec": 5.936002914257483
+      }
+    ],
+    "Gaia_DR3": [],
+    "GALEX": [],
+    "2MASS_PSC": [],
+    "milliquas_v8": [],
+    "VSX": [],
+    "TNS": []
+  },
+  "aliases": {
+    "ZTF": [],
+    "DECAM": []
+  },
+  "coordinates": {
+    "radec_geojson": {
+      "type": "Point",
+      "coordinates": [
+        -168.95914799497376,
+        -45.51930923100073
+      ]
+    },
+    "l": -53.038637665421284,
+    "b": -71.55198498204342
+  },
+  "created_at": 2461088.5479282406,
+  "updated_at": 2461088.549328704
+}

@@ -1,4 +1,8 @@
-"""Post Oracle classification results to Slack."""
+"""Post Oracle classification results to Slack.
+
+Generic across Oracle taxonomies. Channel and bot token are read from env
+vars whose names can be overridden per consumer (e.g. LSST vs ZTF channels).
+"""
 import logging
 import os
 import tempfile
@@ -10,17 +14,11 @@ from oracle_support.plot_oracle import plot_oracle_sunburst
 
 logger = logging.getLogger(__name__)
 
-PERSISTENT_CLASSES = ["AGN", "CV", "Varstar"]
-TRANSIENT_CLASSES = ["SN-Ia", "SN-II", "SN-Ib/c", "SLSN"]
-
 SLACK_GET_URL = "https://slack.com/api/files.getUploadURLExternal"
 SLACK_COMPLETE_URL = "https://slack.com/api/files.completeUploadExternal"
-FRITZ_BASE_URL = "https://fritz.science"
 
-
-LABEL_W = 10
+LABEL_W = 18
 VALUE_W = 9
-COL_W = LABEL_W + 1 + VALUE_W
 
 
 def _fmt_pct(p):
@@ -32,85 +30,77 @@ def _fmt_pct(p):
         except (TypeError, ValueError):
             s = "n/a"
         else:
-            if pct > 0 and pct < 0.01:
+            if 0 < pct < 0.01:
                 s = "<0.01%"
             else:
                 s = f"{pct:.2f}%"
     return f"{s:>{VALUE_W}}"
 
 
-def _col(label, value_str):
-    return f"{label:<{LABEL_W}} {value_str}"
+def format_message(object_id, class_probs, title="Oracle", link=None, top_n=8):
+    """Build a Slack-mrkdwn message listing classes by probability.
 
-
-def _fritz_url(ztf_id):
-    """Return the Fritz source URL if the source exists, otherwise the alerts URL."""
-    fritz_token = os.getenv("FRITZ_TOKEN")
-    if not fritz_token:
-        return f"{FRITZ_BASE_URL}/alerts/ztf/{ztf_id}"
-    try:
-        r = requests.get(
-            f"{FRITZ_BASE_URL}/api/sources/{ztf_id}",
-            headers={"Authorization": f"token {fritz_token}"},
-            timeout=10,
-        )
-        if r.status_code == 200 and r.json().get("status") == "success":
-            return f"{FRITZ_BASE_URL}/source/{ztf_id}"
-    except Exception:
-        logger.debug("[%s] Fritz source check failed, falling back to alerts URL", ztf_id)
-    return f"{FRITZ_BASE_URL}/alerts/ztf/{ztf_id}"
-
-
-def format_message(ztf_id, cond_probs):
-    """Build a Slack-mrkdwn-formatted message from class probabilities."""
-    fritz_link = _fritz_url(ztf_id)
-    p_pers = cond_probs.get("Persistent", 0)
-    p_tran = cond_probs.get("Transient", 0)
-    lines = [
-        f"*Oracle BTSv2 — <{fritz_link}|{ztf_id}>*",
-        "```",
-        f"{_col('Persistent', _fmt_pct(p_pers))}    {_col('Transient', _fmt_pct(p_tran))}",
-    ]
-    n = max(len(PERSISTENT_CLASSES), len(TRANSIENT_CLASSES))
-    for i in range(n):
-        if i < len(PERSISTENT_CLASSES):
-            cls = PERSISTENT_CLASSES[i]
-            left = _col(f"  {cls}", _fmt_pct(cond_probs.get(cls)))
-        else:
-            left = " " * COL_W
-        if i < len(TRANSIENT_CLASSES):
-            cls = TRANSIENT_CLASSES[i]
-            right = _col(f"  {cls}", _fmt_pct(cond_probs.get(cls)))
-        else:
-            right = ""
-        lines.append(f"{left}    {right}")
+    Pass top_n=None to list every class. Works for any taxonomy — no
+    hardcoded class names.
+    """
+    if link:
+        header = f"*{title} — <{link}|{object_id}>*"
+    else:
+        header = f"*{title} — {object_id}*"
+    ranked = sorted(
+        class_probs.items(),
+        key=lambda kv: -(kv[1] if isinstance(kv[1], (int, float)) else 0),
+    )
+    if top_n is not None:
+        ranked = ranked[:top_n]
+    lines = [header, "```"]
+    for name, p in ranked:
+        lines.append(f"{name:<{LABEL_W}} {_fmt_pct(p)}")
     lines.append("```")
     return "\n".join(lines)
 
 
-def generate_image(ztf_id, cond_probs, out_dir=None):
-    fig = plot_oracle_sunburst(cond_probs, ztf_id=ztf_id)
+def generate_image(object_id, class_probs, taxonomy, title="Oracle", out_dir=None, font_size=12):
+    plot_title = f"{title} — {object_id}"
+    fig = plot_oracle_sunburst(class_probs, taxonomy, title=plot_title, font_size=font_size)
     out_dir = Path(out_dir) if out_dir else Path(tempfile.gettempdir())
-    out = out_dir / f"{ztf_id}_oracle_sunburst.png"
+    out = out_dir / f"{object_id}_oracle_sunburst.png"
     fig.write_image(str(out), scale=2)
     return out
 
 
-def post_to_slack(ztf_id, cond_probs, token=None, channel=None, image_path=None):
-    """Upload the sunburst image and a formatted probability block to Slack.
+def post_to_slack(
+    object_id,
+    class_probs,
+    taxonomy,
+    title="Oracle",
+    link=None,
+    token=None,
+    channel=None,
+    token_env="SLACK_ORACLE_BOT_TOKEN",
+    channel_env="SLACK_ORACLE_CHANNEL_ID",
+    image_path=None,
+    top_n=8,
+    font_size=12,
+):
+    """Upload a sunburst image and formatted probability block to Slack.
 
-    Returns the Slack file id on success, or None if the env isn't configured.
+    Token and channel default to the env vars named by token_env/channel_env
+    so different consumers (ZTF, LSST, ...) can target different channels.
+    Pass explicit token/channel to override.
+
+    Returns the Slack file id on success, or None if env isn't configured.
     """
-    token = token or os.getenv("SLACK_ORACLE_BOT_TOKEN")
-    channel = channel or os.getenv("SLACK_ORACLE_CHANNEL_ID")
+    token = token or os.getenv(token_env)
+    channel = channel or os.getenv(channel_env)
     if not token or not channel:
-        logger.warning("[%s] SLACK_ORACLE_BOT_TOKEN/CHANNEL_ID not set, skipping post", ztf_id)
+        logger.warning("[%s] %s/%s not set, skipping post", object_id, token_env, channel_env)
         return None
 
     if image_path is None:
-        image_path = generate_image(ztf_id, cond_probs)
+        image_path = generate_image(object_id, class_probs, taxonomy, title=title, font_size=font_size)
     image_path = Path(image_path)
-    message = format_message(ztf_id, cond_probs)
+    message = format_message(object_id, class_probs, title=title, link=link, top_n=top_n)
 
     size = image_path.stat().st_size
     r = requests.get(
@@ -122,7 +112,7 @@ def post_to_slack(ztf_id, cond_probs, token=None, channel=None, image_path=None)
     r.raise_for_status()
     j = r.json()
     if not j.get("ok"):
-        logger.error("[%s] Slack getUploadURLExternal failed: %s", ztf_id, j)
+        logger.error("[%s] Slack getUploadURLExternal failed: %s", object_id, j)
         return None
     upload_url = j["upload_url"]
     file_id = j["file_id"]
@@ -138,7 +128,7 @@ def post_to_slack(ztf_id, cond_probs, token=None, channel=None, image_path=None)
             "Content-Type": "application/json; charset=utf-8",
         },
         json={
-            "files": [{"id": file_id, "title": f"{ztf_id} Oracle BTSv2"}],
+            "files": [{"id": file_id, "title": f"{object_id} {title}"}],
             "channel_id": channel,
             "initial_comment": message,
         },
@@ -147,6 +137,6 @@ def post_to_slack(ztf_id, cond_probs, token=None, channel=None, image_path=None)
     r.raise_for_status()
     j = r.json()
     if not j.get("ok"):
-        logger.error("[%s] Slack completeUploadExternal failed: %s", ztf_id, j)
+        logger.error("[%s] Slack completeUploadExternal failed: %s", object_id, j)
         return None
     return file_id

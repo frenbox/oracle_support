@@ -1,0 +1,199 @@
+{
+  "_id": {
+    "$numberLong": "313708286172463112"
+  },
+  "objectId": "313629129590702081",
+  "ssObjectId": null,
+  "candidate": {
+    "diaSourceId": {
+      "$numberLong": "313708286172463112"
+    },
+    "visit": {
+      "$numberLong": "2025111100198"
+    },
+    "detector": 13,
+    "diaObjectId": {
+      "$numberLong": "313629129590702081"
+    },
+    "parentDiaSourceId": {
+      "$numberLong": "0"
+    },
+    "midpointMjdTai": 60991.242804659065,
+    "ra": 11.040889918645982,
+    "raErr": 0.000046906287025194615,
+    "dec": -45.51931177306775,
+    "decErr": 0.00004267399708623998,
+    "centroid_flag": false,
+    "apFlux": 2694.820556640625,
+    "apFluxErr": 643.9850463867188,
+    "apFlux_flag": false,
+    "apFlux_flag_apertureTruncated": false,
+    "psfFlux": 1949.4010009765625,
+    "psfFluxErr": 319.4267578125,
+    "psfChi2": 1621.1827392578125,
+    "psfNdata": 1681,
+    "psfFlux_flag": false,
+    "psfFlux_flag_edge": false,
+    "psfFlux_flag_noGoodPixels": false,
+    "trailFlux": 2421.2607421875,
+    "trailFluxErr": 18.032052993774414,
+    "trailRa": 11.040914710277775,
+    "trailRaErr": {
+      "$numberDouble": "NaN"
+    },
+    "trailDec": -45.519322760125924,
+    "trailDecErr": {
+      "$numberDouble": "NaN"
+    },
+    "trailLength": 2.3874354362487793,
+    "trailLengthErr": {
+      "$numberDouble": "NaN"
+    },
+    "trailAngle": -158.55203247070312,
+    "trailAngleErr": {
+      "$numberDouble": "NaN"
+    },
+    "trailChi2": {
+      "$numberDouble": "NaN"
+    },
+    "trailNdata": 0,
+    "trail_flag_edge": false,
+    "scienceFlux": 5800.5400390625,
+    "scienceFluxErr": 323.0024719238281,
+    "forced_PsfFlux_flag": false,
+    "forced_PsfFlux_flag_edge": false,
+    "forced_PsfFlux_flag_noGoodPixels": false,
+    "templateFlux": 3803.7763671875,
+    "templateFluxErr": 39.1070442199707,
+    "shape_flag": false,
+    "shape_flag_no_pixels": false,
+    "shape_flag_not_contained": false,
+    "shape_flag_parent_source": false,
+    "extendedness": 0.9360494613647461,
+    "reliability": 0.9383352398872375,
+    "band": "i",
+    "isDipole": false,
+    "pixelFlags": false,
+    "pixelFlags_bad": false,
+    "pixelFlags_cr": false,
+    "pixelFlags_crCenter": false,
+    "pixelFlags_edge": false,
+    "pixelFlags_nodata": false,
+    "pixelFlags_nodataCenter": false,
+    "pixelFlags_interpolated": false,
+    "pixelFlags_interpolatedCenter": false,
+    "pixelFlags_offimage": false,
+    "pixelFlags_saturated": false,
+    "pixelFlags_saturatedCenter": false,
+    "pixelFlags_suspect": false,
+    "pixelFlags_suspectCenter": false,
+    "pixelFlags_streak": false,
+    "pixelFlags_streakCenter": false,
+    "pixelFlags_injected": false,
+    "pixelFlags_injectedCenter": false,
+    "pixelFlags_injected_template": false,
+    "pixelFlags_injected_templateCenter": false,
+    "glint_trail": false,
+    "objectId": "313629129590702081",
+    "jd": 2460991.7423764183,
+    "magpsf": 23.175247192382812,
+    "sigmapsf": 0.1779075562953949,
+    "diffmaglim": 23.391647338867188,
+    "isdiffpos": true,
+    "snr": 6.102810382843018,
+    "magap": 22.82367515563965,
+    "sigmagap": 0.25945988297462463,
+    "ndethist": 6
+  },
+  "coordinates": {
+    "radec_geojson": {
+      "type": "Point",
+      "coordinates": [
+        -168.95911008135403,
+        -45.51931177306775
+      ]
+    },
+    "l": -53.03872199550673,
+    "b": -71.55198482116458
+  },
+  "created_at": 2461088.5489814817,
+  "updated_at": 2461088.5489814817,
+  "properties": {
+    "rock": false,
+    "stationary": true,
+    "star": false,
+    "near_brightstar": false,
+    "photstats": {
+      "g": null,
+      "r": {
+        "peak_jd": 2460988.6231069895,
+        "peak_mag": 23.994117736816406,
+        "peak_mag_err": 0.209972083568573,
+        "dt": 0,
+        "rising": null,
+        "fading": null
+      },
+      "i": {
+        "peak_jd": 2460985.7358704484,
+        "peak_mag": 22.457246780395508,
+        "peak_mag_err": 0.19731061160564423,
+        "dt": 18.07305908203125,
+        "rising": {
+          "rate": -0.02948473021388054,
+          "rate_error": 0.019882192835211754,
+          "red_chi2": 1.313719391822815,
+          "nb_data": 4,
+          "dt": 12.066553115844727
+        },
+        "fading": {
+          "rate": 0.1195371225476265,
+          "rate_error": 0.04423100873827934,
+          "red_chi2": {
+            "$numberDouble": "NaN"
+          },
+          "nb_data": 2,
+          "dt": 6.006505966186523
+        }
+      },
+      "z": null,
+      "y": null,
+      "u": null
+    },
+    "multisurvey_photstats": {
+      "g": null,
+      "r": {
+        "peak_jd": 2460988.6231069895,
+        "peak_mag": 23.994117736816406,
+        "peak_mag_err": 0.209972083568573,
+        "dt": 0,
+        "rising": null,
+        "fading": null
+      },
+      "i": {
+        "peak_jd": 2460985.7358704484,
+        "peak_mag": 22.457246780395508,
+        "peak_mag_err": 0.19731061160564423,
+        "dt": 18.07305908203125,
+        "rising": {
+          "rate": -0.02948473021388054,
+          "rate_error": 0.019882192835211754,
+          "red_chi2": 1.313719391822815,
+          "nb_data": 4,
+          "dt": 12.066553115844727
+        },
+        "fading": {
+          "rate": 0.1195371225476265,
+          "rate_error": 0.04423100873827934,
+          "red_chi2": {
+            "$numberDouble": "NaN"
+          },
+          "nb_data": 2,
+          "dt": 6.006505966186523
+        }
+      },
+      "z": null,
+      "y": null,
+      "u": null
+    }
+  }
+}

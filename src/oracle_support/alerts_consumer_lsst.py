@@ -5,19 +5,21 @@ import os
 from pathlib import Path
 
 import fastavro
-import requests
 from confluent_kafka import Consumer
 from dotenv import load_dotenv
 from pymongo import MongoClient
 
-from oracle_support.oracle_boom_ztf import get_taxonomy, run_oracle
+from oracle_support.oracle_boom_lsst import get_taxonomy, run_oracle
 from oracle_support.slack_post import format_message, post_to_slack
 
-LOG_FILE = "oracle_ztf.log"
-KAFKA_TOPIC = "ZTF_alerts_results"
-FILTER_NAME = "superphot_ztf"
-MODEL_TITLE = "Oracle BTSv2"
-FRITZ_BASE_URL = "https://fritz.science"
+LOG_FILE = "oracle_lsst.log"
+KAFKA_TOPIC = "LSST_alerts_results"
+FILTER_NAME = "superphot_lsst"
+MODEL_TITLE = "Oracle ELAsTiCCv2-lite"
+SLACK_CHANNEL_ENV = "SLACK_ORACLE_LSST_CHANNEL_ID"
+SLACK_TOP_N = None  # show every class
+SLACK_FONT_SIZE = 9  # smaller labels so long ELAsTiCC names fit
+BABAMUL_OBJECT_URL = "https://babamul.caltech.edu/objects/LSST/{object_id}"
 
 logging.basicConfig(
     level=logging.INFO,
@@ -37,26 +39,13 @@ _mongo_url = (
     else "mongodb://localhost:27017"
 )
 _db = MongoClient(_mongo_url)["boom"]
-alerts_coll = _db["ZTF_alerts"]
-alerts_aux_coll = _db["ZTF_alerts_aux"]
+alerts_coll = _db["LSST_alerts"]
+alerts_aux_coll = _db["LSST_alerts_aux"]
 
 
-def _fritz_url(ztf_id):
-    """Return the Fritz source URL if the source exists, otherwise the alerts URL."""
-    fritz_token = os.getenv("FRITZ_TOKEN")
-    if not fritz_token:
-        return f"{FRITZ_BASE_URL}/alerts/ztf/{ztf_id}"
-    try:
-        r = requests.get(
-            f"{FRITZ_BASE_URL}/api/sources/{ztf_id}",
-            headers={"Authorization": f"token {fritz_token}"},
-            timeout=10,
-        )
-        if r.status_code == 200 and r.json().get("status") == "success":
-            return f"{FRITZ_BASE_URL}/source/{ztf_id}"
-    except Exception:
-        logger.debug("[%s] Fritz source check failed, falling back to alerts URL", ztf_id)
-    return f"{FRITZ_BASE_URL}/alerts/ztf/{ztf_id}"
+def _object_url(object_id):
+    """Return the Babamul object page URL for the given LSST diaObjectId."""
+    return BABAMUL_OBJECT_URL.format(object_id=object_id)
 
 
 def read_avro(msg):
@@ -69,7 +58,7 @@ def read_avro(msg):
 
 consumer = Consumer({
     "bootstrap.servers": "localhost:9092",
-    "group.id": "umn_boom_kafka_consumer_group_oracle_ztf",
+    "group.id": "umn_boom_kafka_consumer_group_oracle_lsst",
     "auto.offset.reset": "earliest",
     "enable.auto.commit": False,
     "session.timeout.ms": 6000,
@@ -106,74 +95,73 @@ def consume():
                 consumer.commit(message=msg)
                 continue
 
-            ztf_id = record["objectId"]
+            object_id = record["objectId"]
             candid = record.get("candid")
 
             passes_filter = any(
                 FILTER_NAME in f["filter_name"] for f in record.get("filters") or []
             )
             if not passes_filter:
-                logger.debug("[%s] did not pass %s, skipping", ztf_id, FILTER_NAME)
+                logger.debug("[%s] did not pass %s, skipping", object_id, FILTER_NAME)
                 total_consumed += 1
                 consumer.commit(message=msg)
                 continue
 
-            aux_doc = alerts_aux_coll.find_one({"_id": ztf_id})
+            aux_doc = alerts_aux_coll.find_one({"_id": object_id})
             alert_doc = alerts_coll.find_one({"_id": candid}) if candid is not None else None
 
             if aux_doc is None:
-                logger.warning("[%s] no aux doc in Mongo, skipping", ztf_id)
+                logger.warning("[%s] no aux doc in Mongo, skipping", object_id)
                 total_consumed += 1
                 consumer.commit(message=msg)
                 continue
 
             prv_candidates = aux_doc.get("prv_candidates") or []
-            cross_matches = aux_doc.get("cross_matches") or {}
-            candidate = (alert_doc or {}).get("candidate") or {}
 
             if not prv_candidates:
-                logger.warning("[%s] no prv_candidates in aux doc", ztf_id)
+                logger.warning("[%s] no prv_candidates in aux doc", object_id)
 
-            logger.info("[%s] Running Oracle (prv=%d)", ztf_id, len(prv_candidates))
+            logger.info("[%s] Running Oracle (prv=%d)", object_id, len(prv_candidates))
 
             try:
                 result = run_oracle(
-                    ztf_id=ztf_id,
+                    object_id=object_id,
                     prv_candidates=prv_candidates,
-                    candidate=candidate,
-                    cross_matches=cross_matches,
                 )
             except Exception:
-                logger.exception("[%s] run_oracle failed", ztf_id)
+                logger.exception("[%s] run_oracle failed", object_id)
                 result = None
 
             if result is not None:
-                cond_probs_df, class_scores = result
+                class_scores_df, class_scores = result
                 scores_list = class_scores.tolist()
                 if any(v is None or (isinstance(v, float) and math.isnan(v)) for v in scores_list):
-                    logger.warning("[%s] class_scores contain NaN, skipping post", ztf_id)
+                    logger.warning("[%s] class_scores contain NaN, skipping post", object_id)
                     total_consumed += 1
                     consumer.commit(message=msg)
                     continue
-                class_probs = dict(zip(cond_probs_df.columns, scores_list))
-                link = _fritz_url(ztf_id)
+                class_probs = dict(zip(class_scores_df.columns, scores_list))
+                link = _object_url(object_id)
                 logger.info("[%s] classification:\n%s",
-                            ztf_id, format_message(ztf_id, class_probs, title=MODEL_TITLE, link=link))
+                            object_id,
+                            format_message(object_id, class_probs, title=MODEL_TITLE, link=link, top_n=SLACK_TOP_N))
                 try:
                     file_id = post_to_slack(
-                        ztf_id,
+                        object_id,
                         class_probs,
                         taxonomy=get_taxonomy(),
                         title=MODEL_TITLE,
                         link=link,
-                        channel_env="SLACK_ORACLE_CHANNEL_ID",
+                        channel_env=SLACK_CHANNEL_ENV,
+                        top_n=SLACK_TOP_N,
+                        font_size=SLACK_FONT_SIZE,
                     )
                     if file_id:
-                        logger.info("[%s] posted to Slack (file_id=%s)", ztf_id, file_id)
+                        logger.info("[%s] posted to Slack (file_id=%s)", object_id, file_id)
                 except Exception:
-                    logger.exception("[%s] Slack post failed", ztf_id)
+                    logger.exception("[%s] Slack post failed", object_id)
             else:
-                logger.warning("[%s] no result", ztf_id)
+                logger.warning("[%s] no result", object_id)
 
             total_consumed += 1
             consumer.commit(message=msg)

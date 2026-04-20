@@ -1,73 +1,49 @@
-"""Sunburst plot of Oracle BTSv2 hierarchical classification output.
+"""Generic sunburst plot of Oracle hierarchical classification output.
 
-Tree structure (conditional probabilities):
-
-    Alert
-    ├── Persistent  (AGN, CV, Varstar)
-    └── Transient   (SN-Ia, SN-II, SN-Ib/c, SLSN)
+Walks the model's taxonomy tree so the same function works for any Oracle
+Taxonomy (BTSv2, ELAsTiCC-lite, etc.).
 """
 import math
 
 import plotly.graph_objects as go
 
 
-PERSISTENT_CLASSES = ["AGN", "CV", "Varstar"]
-TRANSIENT_CLASSES = ["SN-Ia", "SN-II", "SN-Ib/c", "SLSN"]
-
-COLORS = {
-    "Alert": "#636EFA",
-    "Persistent": "#EF553B",
-    "Transient": "#00CC96",
-    "AGN": "#FFA15A",
-    "CV": "#AB63FA",
-    "Varstar": "#FF6692",
-    "SN-Ia": "#19D3F3",
-    "SN-II": "#B6E880",
-    "SN-Ib/c": "#FF97FF",
-    "SLSN": "#FECB52",
-}
+def _fmt(p):
+    if p is None or (isinstance(p, float) and math.isnan(p)):
+        return "NaN"
+    if 0 < p < 1e-4:
+        return "<0.01%"
+    return f"{p * 100:.2f}%"
 
 
-def plot_oracle_sunburst(scores, ztf_id=None):
-    """Create an interactive sunburst figure from class (marginal) probabilities.
+def plot_oracle_sunburst(scores, taxonomy, title=None, font_size=12):
+    """Create a sunburst figure from marginal class probabilities for any Taxonomy.
 
     Args:
-        scores: dict with keys Alert, Persistent, Transient, AGN, CV, Varstar,
-            SN-Ia, SN-II, SN-Ib/c, SLSN (marginal class probabilities; children
-            under each parent should sum to the parent's value).
-        ztf_id: optional identifier for the title.
+        scores: dict {class_name: probability} for every taxonomy node.
+        taxonomy: Oracle Taxonomy instance (networkx DiGraph with
+            get_level_order_traversal / get_parent_nodes).
+        title: optional title shown at the top of the figure.
+        font_size: point size for leaf labels (use smaller values when labels are long).
 
     Returns:
         plotly.graph_objects.Figure
     """
-    p_alert = scores.get("Alert", 1.0)
-    p_persistent = scores.get("Persistent", 0)
-    p_transient = scores.get("Transient", 0)
+    nodes = list(taxonomy.get_level_order_traversal())
+    parent_nodes = list(taxonomy.get_parent_nodes())
 
-    ids = ["Alert", "Persistent", "Transient"]
-    labels = ["<b>Alert</b>", "<b>Persistent</b>", "<b>Transient</b>"]
-    parents = ["", "Alert", "Alert"]
-    values = [p_alert, p_persistent, p_transient]
-    texts = [f"<b>{_fmt(p_alert)}</b>", f"<b>{_fmt(p_persistent)}</b>", f"<b>{_fmt(p_transient)}</b>"]
-    colors = [COLORS["Alert"], COLORS["Persistent"], COLORS["Transient"]]
-
-    for cls in PERSISTENT_CLASSES:
-        p = scores.get(cls, 0)
-        ids.append(cls)
-        labels.append(f"<b>{cls}</b>")
-        parents.append("Persistent")
+    ids, labels, parents, values, texts = [], [], [], [], []
+    for node, parent in zip(nodes, parent_nodes):
+        p = scores.get(node, 0) or 0
+        try:
+            p = float(p)
+        except (TypeError, ValueError):
+            p = 0.0
+        ids.append(node)
+        labels.append(f"<b>{node}</b>")
+        parents.append(parent if parent else "")
         values.append(p)
         texts.append(f"<b>{_fmt(p)}</b>")
-        colors.append(COLORS[cls])
-
-    for cls in TRANSIENT_CLASSES:
-        p = scores.get(cls, 0)
-        ids.append(cls)
-        labels.append(f"<b>{cls}</b>")
-        parents.append("Transient")
-        values.append(p)
-        texts.append(f"<b>{_fmt(p)}</b>")
-        colors.append(COLORS[cls])
 
     fig = go.Figure(go.Sunburst(
         ids=ids,
@@ -76,46 +52,35 @@ def plot_oracle_sunburst(scores, ztf_id=None):
         values=values,
         text=texts,
         textinfo="label+text",
-        textfont=dict(size=14),
+        textfont=dict(size=font_size),
         hovertemplate="<b>%{label}</b><br>P(class) = %{text}<extra></extra>",
         branchvalues="total",
-        marker=dict(colors=colors, line=dict(width=2, color="white")),
+        marker=dict(line=dict(width=2, color="white")),
         insidetextorientation="radial",
     ))
 
-    title = f"Oracle BTSv2 — {ztf_id}" if ztf_id else "Oracle BTSv2"
-    fig.update_layout(
-        title=dict(text=f"<b>{title}</b>", x=0.5, font=dict(size=20, family="Arial")),
-        margin=dict(t=60, l=10, r=10, b=10),
-        width=650,
-        height=650,
-    )
+    if title:
+        fig.update_layout(
+            title=dict(text=f"<b>{title}</b>", x=0.5, font=dict(size=20, family="Arial")),
+            margin=dict(t=60, l=10, r=10, b=10),
+            width=750,
+            height=750,
+        )
+    else:
+        fig.update_layout(margin=dict(t=10, l=10, r=10, b=10), width=750, height=750)
     return fig
 
 
-def _fmt(p):
-    if p is None or (isinstance(p, float) and math.isnan(p)):
-        return "NaN"
-    if p < 1e-4:
-        return "<0.01%"
-    return f"{p * 100:.2f}%"
-
-
 if __name__ == "__main__":
+    from oracle.presets import get_model
+
+    m = get_model("BTSv2")
     sample = {
         "Alert": 1.0,
-        "Persistent": 0.7298641204833984,
-        "Transient": 0.27013593912124634,
-        "AGN": 0.0009099491871893406,
-        "CV": 0.9972658157348633,
-        "Varstar": 0.0018241567304357886,
-        "SN-Ia": 0.35389694571495056,
-        "SN-II": 0.5109876394271851,
-        "SN-Ib/c": 0.13468529284000397,
-        "SLSN": 0.0004300586588215083,
+        "Persistent": 0.73, "Transient": 0.27,
+        "AGN": 0.0009, "CV": 0.728, "Varstar": 0.0013,
+        "SN-Ia": 0.095, "SN-II": 0.138, "SN-Ib/c": 0.036, "SLSN": 0.0001,
     }
-    ztf_id = "ZTF26aaqylle"
-    fig = plot_oracle_sunburst(sample, ztf_id=ztf_id)
-    out = f"{ztf_id}_oracle_sunburst.png"
-    fig.write_image(out, scale=2)
-    print(f"saved: {out}")
+    fig = plot_oracle_sunburst(sample, m.taxonomy, title="Oracle BTSv2 — demo")
+    fig.write_image("demo_btsv2_sunburst.png", scale=2)
+    print("saved: demo_btsv2_sunburst.png")

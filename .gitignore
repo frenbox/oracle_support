@@ -1,2 +1,4 @@
 .vscode
 oracle_ztf.log
+oracle_lsst.log
+__pycache__
