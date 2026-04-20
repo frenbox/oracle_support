@@ -15,7 +15,7 @@ from oracle_support.slack_post import format_message, post_to_slack
 
 LOG_FILE = "oracle_ztf.log"
 KAFKA_TOPIC = "ZTF_alerts_results"
-FILTER_NAME = "superphot_ztf"
+FILTER_NAME = "rcfdeep_partnership"
 MODEL_TITLE = "Oracle BTSv2"
 FRITZ_BASE_URL = "https://fritz.science"
 
@@ -159,19 +159,27 @@ def consume():
                 link = _fritz_url(ztf_id)
                 logger.info("[%s] classification:\n%s",
                             ztf_id, format_message(ztf_id, class_probs, title=MODEL_TITLE, link=link))
-                try:
-                    file_id = post_to_slack(
-                        ztf_id,
-                        class_probs,
-                        taxonomy=get_taxonomy(),
-                        title=MODEL_TITLE,
-                        link=link,
-                        channel_env="SLACK_ORACLE_CHANNEL_ID",
-                    )
-                    if file_id:
-                        logger.info("[%s] posted to Slack (file_id=%s)", ztf_id, file_id)
-                except Exception:
-                    logger.exception("[%s] Slack post failed", ztf_id)
+                p_transient = class_probs.get("Transient")
+                p_persistent = class_probs.get("Persistent")
+                if p_transient is None or p_persistent is None:
+                    logger.warning("[%s] missing Transient/Persistent probabilities, skipping Slack post", ztf_id)
+                elif p_transient <= p_persistent:
+                    logger.info("[%s] P(Transient)=%.3f <= P(Persistent)=%.3f, not posting to Slack",
+                                ztf_id, p_transient, p_persistent)
+                else:
+                    try:
+                        file_id = post_to_slack(
+                            ztf_id,
+                            class_probs,
+                            taxonomy=get_taxonomy(),
+                            title=MODEL_TITLE,
+                            link=link,
+                            channel_env="SLACK_ORACLE_CHANNEL_ID",
+                        )
+                        if file_id:
+                            logger.info("[%s] posted to Slack (file_id=%s)", ztf_id, file_id)
+                    except Exception:
+                        logger.exception("[%s] Slack post failed", ztf_id)
             else:
                 logger.warning("[%s] no result", ztf_id)
 
