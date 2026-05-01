@@ -37,11 +37,12 @@ def _fmt_pct(p):
     return f"{s:>{VALUE_W}}"
 
 
-def format_message(object_id, class_probs, title="Oracle", link=None, top_n=8):
+def format_message(object_id, class_probs, title="Oracle", link=None, top_n=8, extra_text=None):
     """Build a Slack-mrkdwn message listing classes by probability.
 
     Pass top_n=None to list every class. Works for any taxonomy — no
-    hardcoded class names.
+    hardcoded class names. ``extra_text``, if given, is appended below the
+    probability block (e.g. an external classification summary).
     """
     if link:
         header = f"*{title} — <{link}|{object_id}>*"
@@ -57,6 +58,8 @@ def format_message(object_id, class_probs, title="Oracle", link=None, top_n=8):
     for name, p in ranked:
         lines.append(f"{name:<{LABEL_W}} {_fmt_pct(p)}")
     lines.append("```")
+    if extra_text:
+        lines.append(extra_text)
     return "\n".join(lines)
 
 
@@ -82,6 +85,7 @@ def post_to_slack(
     image_path=None,
     top_n=8,
     font_size=12,
+    extra_text=None,
 ):
     """Upload a sunburst image and formatted probability block to Slack.
 
@@ -100,7 +104,7 @@ def post_to_slack(
     if image_path is None:
         image_path = generate_image(object_id, class_probs, taxonomy, title=title, font_size=font_size)
     image_path = Path(image_path)
-    message = format_message(object_id, class_probs, title=title, link=link, top_n=top_n)
+    message = format_message(object_id, class_probs, title=title, link=link, top_n=top_n, extra_text=extra_text)
 
     size = image_path.stat().st_size
     r = requests.get(

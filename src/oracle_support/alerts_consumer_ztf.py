@@ -2,9 +2,11 @@ import io
 import logging
 import math
 import os
+from datetime import datetime, timezone
 from pathlib import Path
 
 import fastavro
+import pandas as pd
 import requests
 from confluent_kafka import Consumer
 from dotenv import load_dotenv
@@ -16,8 +18,9 @@ from oracle_support.slack_post import format_message, post_to_slack
 LOG_FILE = "oracle_ztf.log"
 KAFKA_TOPIC = "ZTF_alerts_results"
 FILTER_NAME = "rcfdeep_partnership"
-MODEL_TITLE = "Oracle BTSv2"
+MODEL_TITLE = "Oracle Omni"
 FRITZ_BASE_URL = "https://fritz.science"
+RESULTS_CSV = Path("results") / "oracle_ztf_results.csv"
 
 logging.basicConfig(
     level=logging.INFO,
@@ -39,6 +42,64 @@ _mongo_url = (
 _db = MongoClient(_mongo_url)["boom"]
 alerts_coll = _db["ZTF_alerts"]
 alerts_aux_coll = _db["ZTF_alerts_aux"]
+
+
+def _fritz_classifications(ztf_id):
+    """Return Fritz classifications for the source, or [] on missing/error."""
+    fritz_token = os.getenv("FRITZ_TOKEN")
+    if not fritz_token:
+        return []
+    try:
+        r = requests.get(
+            f"{FRITZ_BASE_URL}/api/sources/{ztf_id}/classifications",
+            headers={"Authorization": f"token {fritz_token}"},
+            timeout=10,
+        )
+        if r.status_code != 200:
+            return []
+        j = r.json()
+        if j.get("status") != "success":
+            return []
+        return j.get("data") or []
+    except Exception:
+        logger.exception("[%s] Fritz classifications fetch failed", ztf_id)
+        return []
+
+
+def _format_fritz_block(classifications):
+    """Format a list of Fritz classification dicts as a Slack-mrkdwn block."""
+    if not classifications:
+        return None
+    parts = []
+    for c in classifications[:5]:
+        name = c.get("classification") or "?"
+        prob = c.get("probability")
+        if isinstance(prob, (int, float)):
+            parts.append(f"{name} ({prob:.2f})")
+        else:
+            parts.append(name)
+    return "*Fritz:* " + ", ".join(parts)
+
+
+def _append_csv(ztf_id, class_probs, fritz_classifications):
+    """Append one row to the rolling results CSV (creates header on first write)."""
+    RESULTS_CSV.parent.mkdir(parents=True, exist_ok=True)
+    fritz_str = "; ".join(
+        f"{c.get('classification', '?')}({c.get('probability')})"
+        for c in (fritz_classifications or [])
+    )
+    row = {
+        "objectId": ztf_id,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        **{k: float(v) if isinstance(v, (int, float)) else v for k, v in class_probs.items()},
+        "fritz_classifications": fritz_str,
+    }
+    pd.DataFrame([row]).to_csv(
+        RESULTS_CSV,
+        mode="a",
+        index=False,
+        header=not RESULTS_CSV.exists(),
+    )
 
 
 def _fritz_url(ztf_id):
@@ -130,6 +191,11 @@ def consume():
             prv_candidates = aux_doc.get("prv_candidates") or []
             cross_matches = aux_doc.get("cross_matches") or {}
             candidate = (alert_doc or {}).get("candidate") or {}
+            cutouts = {
+                "cutoutScience": record.get("cutoutScience"),
+                "cutoutTemplate": record.get("cutoutTemplate"),
+                "cutoutDifference": record.get("cutoutDifference"),
+            }
 
             if not prv_candidates:
                 logger.warning("[%s] no prv_candidates in aux doc", ztf_id)
@@ -142,6 +208,7 @@ def consume():
                     prv_candidates=prv_candidates,
                     candidate=candidate,
                     cross_matches=cross_matches,
+                    cutouts=cutouts,
                 )
             except Exception:
                 logger.exception("[%s] run_oracle failed", ztf_id)
@@ -157,15 +224,17 @@ def consume():
                     continue
                 class_probs = dict(zip(cond_probs_df.columns, scores_list))
                 link = _fritz_url(ztf_id)
+
+                fritz_classifications = _fritz_classifications(ztf_id)
+                _append_csv(ztf_id, class_probs, fritz_classifications)
+
+                fritz_block = _format_fritz_block(fritz_classifications)
                 logger.info("[%s] classification:\n%s",
-                            ztf_id, format_message(ztf_id, class_probs, title=MODEL_TITLE, link=link))
-                p_transient = class_probs.get("Transient")
-                p_persistent = class_probs.get("Persistent")
-                if p_transient is None or p_persistent is None:
-                    logger.warning("[%s] missing Transient/Persistent probabilities, skipping Slack post", ztf_id)
-                elif p_transient <= p_persistent:
-                    logger.info("[%s] P(Transient)=%.3f <= P(Persistent)=%.3f, not posting to Slack",
-                                ztf_id, p_transient, p_persistent)
+                            ztf_id, format_message(ztf_id, class_probs, title=MODEL_TITLE,
+                                                   link=link, extra_text=fritz_block))
+
+                if not fritz_classifications:
+                    logger.info("[%s] no Fritz classification, skipping Slack post", ztf_id)
                 else:
                     try:
                         file_id = post_to_slack(
@@ -175,6 +244,7 @@ def consume():
                             title=MODEL_TITLE,
                             link=link,
                             channel_env="SLACK_ORACLE_CHANNEL_ID",
+                            extra_text=fritz_block,
                         )
                         if file_id:
                             logger.info("[%s] posted to Slack (file_id=%s)", ztf_id, file_id)

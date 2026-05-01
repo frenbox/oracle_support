@@ -1,6 +1,9 @@
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
+import base64
+import gzip
+import io
 import logging
 
 import numpy as np
@@ -11,6 +14,7 @@ import pandas as pd
 from pathlib import Path
 from astropy import units as u
 from astropy.coordinates import SkyCoord
+from astropy.io import fits
 
 logger = logging.getLogger(__name__)
 
@@ -28,6 +32,7 @@ def _coerce(value, default, ztf_id, field, source):
         pass
     return value
 
+from oracle.architectures import GRU_MD_MM_Improved
 from oracle.custom_datasets.BTS import (
     ZTF_passband_to_wavelengths,
     time_dependent_feature_list,
@@ -35,9 +40,11 @@ from oracle.custom_datasets.BTS import (
     meta_data_feature_list,
     flag_value,
 )
-from oracle.presets import get_model
+from oracle.taxonomies import BTS_Taxonomy
 
 MODEL_WEIGHTS = Path(__file__).resolve().parents[2] / "data" / "best_model_f1_ztf.pth"
+
+BAND_TO_CHANNEL = {"g": 0, "r": 1, "i": 2}
 
 _model = None
 
@@ -45,25 +52,66 @@ _model = None
 def _get_model():
     global _model
     if _model is None:
-        m = get_model("BTSv2")
-        m.load_state_dict(torch.load(str(MODEL_WEIGHTS), map_location="cpu"), strict=False)
+        m = GRU_MD_MM_Improved(
+            BTS_Taxonomy(),
+            lc_md_model_dir=None,
+            image_model_dir=None,
+        )
+        m.load_state_dict(torch.load(str(MODEL_WEIGHTS), map_location="cpu"), strict=True)
         m.eval()
         _model = m
     return _model
+
+
+def load_cutout(field):
+    """Decode a ZTF cutout into a normalized 63x63 torch tensor.
+
+    Accepts MongoDB form ``{"$binary": {"base64": "..."}}``, Avro
+    ``{"stampData": <bytes>}``, raw gzipped FITS bytes, or a base64 string.
+    Returns None if the input is empty or malformed.
+    """
+    if field is None:
+        return None
+    if isinstance(field, dict):
+        if "$binary" in field:
+            raw_bytes = base64.b64decode(field["$binary"]["base64"])
+        elif "stampData" in field:
+            sd = field["stampData"]
+            raw_bytes = base64.b64decode(sd) if isinstance(sd, str) else bytes(sd)
+        else:
+            return None
+    elif isinstance(field, (bytes, bytearray, memoryview)):
+        raw_bytes = bytes(field)
+    elif isinstance(field, str):
+        raw_bytes = base64.b64decode(field)
+    else:
+        return None
+
+    raw = gzip.decompress(raw_bytes)
+    with fits.open(io.BytesIO(raw)) as hdul:
+        image = hdul[0].data.astype(float)
+    image = np.nan_to_num(image, nan=0.0, posinf=0.0, neginf=0.0)
+    norm = np.linalg.norm(image)
+    if norm != 0:
+        image = image / norm
+    return torch.from_numpy(image).float()
 
 
 def get_taxonomy():
     return _get_model().taxonomy
 
 
-def run_oracle(ztf_id, prv_candidates, candidate, cross_matches):
-    """Run Oracle BTSv2 classification on a ZTF alert.
+def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None):
+    """Run Oracle BTSv2-pro (omni) classification on a ZTF alert.
 
     Args:
         ztf_id: ZTF objectId string.
         prv_candidates: list of prior detection dicts (jd, band, magpsf, sigmapsf, ra, dec, ...).
         candidate: current candidate dict (sgscore1, drb, ndethist, ...).
         cross_matches: dict of catalog cross-matches (expects 'AllWISE').
+        cutouts: dict containing 'cutoutTemplate' (the reference image). The
+            template is placed in the channel matching the most recent
+            detection's band (g=0, r=1, i=2). May be None.
 
     Returns:
         (class_scores_df, class_scores) tuple, or None if input is empty.
@@ -73,6 +121,21 @@ def run_oracle(ztf_id, prv_candidates, candidate, cross_matches):
 
     prv_cand = pd.DataFrame(prv_candidates)
     prv_cand.sort_values("jd", inplace=True)
+
+    if "programid" in prv_cand.columns:
+        before = len(prv_cand)
+        prv_cand = prv_cand[prv_cand["programid"].isin([1, 2])].reset_index(drop=True)
+        dropped = before - len(prv_cand)
+        if dropped:
+            logger.info("[%s] dropped %d/%d prv_candidates with programid not in {1,2}",
+                        ztf_id, dropped, before)
+        if prv_cand.empty:
+            logger.warning("[%s] no public prv_candidates remain after programid filter", ztf_id)
+            return None
+    else:
+        logger.warning("[%s] prv_candidates missing 'programid' column, no filter applied", ztf_id)
+
+    final_alert_band = prv_cand["band"].values[-1] if "band" in prv_cand.columns else None
 
     for col in ("jd", "magpsf", "sigmapsf", "ra", "dec", "band"):
         if col not in prv_cand.columns:
@@ -163,7 +226,35 @@ def run_oracle(ztf_id, prv_candidates, candidate, cross_matches):
     length = torch.tensor([len(prv_cand)])
     static_tensor = torch.cat((static_tensor, meta_data_tensor), dim=1)
 
-    batch = {"ts": ts_tensor, "static": static_tensor, "length": length}
+    image_tensor = torch.zeros((1, 3, 63, 63))
+    template_field = (cutouts or {}).get("cutoutTemplate")
+    if template_field is None:
+        logger.warning("[%s] cutoutTemplate missing, postage_stamp will be all zeros", ztf_id)
+    else:
+        try:
+            template = load_cutout(template_field)
+        except Exception:
+            logger.exception("[%s] failed to decode cutoutTemplate", ztf_id)
+            template = None
+        if template is None:
+            logger.warning("[%s] cutoutTemplate decode returned None", ztf_id)
+        elif template.shape != (63, 63):
+            logger.warning("[%s] cutoutTemplate has unexpected shape %s, expected (63,63)",
+                           ztf_id, tuple(template.shape))
+        else:
+            ch = BAND_TO_CHANNEL.get(final_alert_band)
+            if ch is None:
+                logger.warning("[%s] final detection band %r has no channel mapping",
+                               ztf_id, final_alert_band)
+            else:
+                image_tensor[0, ch, :, :] = template
+
+    batch = {
+        "ts": ts_tensor,
+        "static": static_tensor,
+        "length": length,
+        "postage_stamp": image_tensor,
+    }
 
     model = _get_model()
     with torch.no_grad():
