@@ -17,7 +17,7 @@ from oracle_support.slack_post import format_message, post_to_slack
 
 LOG_FILE = "oracle_ztf.log"
 KAFKA_TOPIC = "ZTF_alerts_results"
-FILTER_NAME = "rcfdeep_partnership"
+FILTER_NAME = "rcfdeep_partnership_ztf"
 MODEL_TITLE = "Oracle Omni"
 FRITZ_BASE_URL = "https://fritz.science"
 RESULTS_CSV = Path("results") / "oracle_ztf_results.csv"
