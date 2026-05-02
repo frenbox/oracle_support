@@ -101,7 +101,8 @@ def get_taxonomy():
     return _get_model().taxonomy
 
 
-def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None):
+def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None,
+               fp_hists=None, max_history_days=180):
     """Run Oracle BTSv2-pro (omni) classification on a ZTF alert.
 
     Args:
@@ -112,6 +113,12 @@ def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None):
         cutouts: dict containing 'cutoutTemplate' (the reference image). The
             template is placed in the channel matching the most recent
             detection's band (g=0, r=1, i=2). May be None.
+        fp_hists: list of forced-photometry dicts from alert_aux. Rows with a
+            real ``magpsf`` are merged into the photometry; rows without are
+            skipped (upper limits / low SNR). ra/dec are pinned from the most
+            recent prv_candidate since fp_hists rows lack them.
+        max_history_days: keep only photometry within this many days of the
+            most recent point. Set to None to disable.
 
     Returns:
         (class_scores_df, class_scores) tuple, or None if input is empty.
@@ -119,7 +126,31 @@ def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None):
     if not prv_candidates:
         return None
 
-    prv_cand = pd.DataFrame(prv_candidates)
+    rows = list(prv_candidates)
+    if fp_hists:
+        try:
+            ref = max(prv_candidates, key=lambda x: x.get("jd") or 0)
+            ref_ra, ref_dec = ref.get("ra"), ref.get("dec")
+        except Exception:
+            ref_ra = ref_dec = None
+        added = 0
+        for fp in fp_hists:
+            if fp.get("magpsf") is None or fp.get("sigmapsf") is None:
+                continue
+            if fp.get("isdiffpos") is not True:
+                continue
+            row = dict(fp)
+            if row.get("ra") is None:
+                row["ra"] = ref_ra
+            if row.get("dec") is None:
+                row["dec"] = ref_dec
+            rows.append(row)
+            added += 1
+        if added:
+            logger.info("[%s] merged %d/%d fp_hists rows (magpsf present, isdiffpos true)",
+                        ztf_id, added, len(fp_hists))
+
+    prv_cand = pd.DataFrame(rows)
     prv_cand.sort_values("jd", inplace=True)
 
     if "programid" in prv_cand.columns:
@@ -127,13 +158,26 @@ def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None):
         prv_cand = prv_cand[prv_cand["programid"].isin([1, 2])].reset_index(drop=True)
         dropped = before - len(prv_cand)
         if dropped:
-            logger.info("[%s] dropped %d/%d prv_candidates with programid not in {1,2}",
+            logger.info("[%s] dropped %d/%d photometry rows with programid not in {1,2}",
                         ztf_id, dropped, before)
         if prv_cand.empty:
-            logger.warning("[%s] no public prv_candidates remain after programid filter", ztf_id)
+            logger.warning("[%s] no public photometry remains after programid filter", ztf_id)
             return None
     else:
-        logger.warning("[%s] prv_candidates missing 'programid' column, no filter applied", ztf_id)
+        logger.warning("[%s] photometry missing 'programid' column, no filter applied", ztf_id)
+
+    if max_history_days is not None and "jd" in prv_cand.columns and not prv_cand.empty:
+        cutoff = prv_cand["jd"].max() - max_history_days
+        before = len(prv_cand)
+        prv_cand = prv_cand[prv_cand["jd"] >= cutoff].reset_index(drop=True)
+        dropped = before - len(prv_cand)
+        if dropped:
+            logger.info("[%s] dropped %d/%d photometry rows older than %d days",
+                        ztf_id, dropped, before, max_history_days)
+        if prv_cand.empty:
+            logger.warning("[%s] no photometry remains after %d-day window filter",
+                           ztf_id, max_history_days)
+            return None
 
     final_alert_band = prv_cand["band"].values[-1] if "band" in prv_cand.columns else None
 
@@ -263,22 +307,3 @@ def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None):
 
     return class_scores_df, class_scores
 
-
-if __name__ == "__main__":
-    import json
-
-    path_aux = Path("../../data/alert_aux.json")
-    path_alert = Path("../../data/alert.json")
-
-    with open(path_aux) as f:
-        aux = json.load(f)
-    with open(path_alert) as f:
-        alert = json.load(f)
-
-    df, _ = run_oracle(
-        ztf_id=alert.get("objectId", "test"),
-        prv_candidates=aux["prv_candidates"],
-        candidate=alert["candidate"],
-        cross_matches=aux["cross_matches"],
-    )
-    print(df)

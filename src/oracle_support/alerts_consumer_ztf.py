@@ -189,6 +189,7 @@ def consume():
                 continue
 
             prv_candidates = aux_doc.get("prv_candidates") or []
+            fp_hists = aux_doc.get("fp_hists") or []
             cross_matches = aux_doc.get("cross_matches") or {}
             candidate = (alert_doc or {}).get("candidate") or {}
             cutouts = {
@@ -209,6 +210,7 @@ def consume():
                     candidate=candidate,
                     cross_matches=cross_matches,
                     cutouts=cutouts,
+                    fp_hists=fp_hists,
                 )
             except Exception:
                 logger.exception("[%s] run_oracle failed", ztf_id)
