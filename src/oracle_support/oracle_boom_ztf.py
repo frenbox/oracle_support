@@ -35,6 +35,7 @@ def _coerce(value, default, ztf_id, field, source):
 from oracle.architectures import GRU_MD_MM_Improved
 from oracle.custom_datasets.BTS import (
     ZTF_passband_to_wavelengths,
+    ZTF_fid_to_wavelengths,
     time_dependent_feature_list,
     time_independent_feature_list,
     meta_data_feature_list,
@@ -226,6 +227,8 @@ def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None,
         val = prv_cand[col].values[-1]
         if pd.isna(val):
             logger.warning("[%s] time-independent feature '%s' is NaN at last row", ztf_id, col)
+        if col == "fid":
+            vals = [ZTF_fid_to_wavelengths[v] for v in vals]
         static_tensor[0, i] = torch.tensor(val)
 
     meta_data_tensor = torch.zeros((1, len(meta_data_feature_list)))
