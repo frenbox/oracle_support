@@ -216,6 +216,8 @@ def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None,
         if n_nan:
             logger.warning("[%s] time-dependent feature '%s' has %d/%d NaN values",
                            ztf_id, col, n_nan, len(vals))
+        if col == "fid":
+            vals = [ZTF_fid_to_wavelengths[v] for v in vals]
         ts_tensor[0, :, i] = torch.tensor(vals)
 
     static_tensor = torch.zeros((1, len(time_independent_feature_list)))
@@ -227,8 +229,6 @@ def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None,
         val = prv_cand[col].values[-1]
         if pd.isna(val):
             logger.warning("[%s] time-independent feature '%s' is NaN at last row", ztf_id, col)
-        if col == "fid":
-            vals = [ZTF_fid_to_wavelengths[v] for v in vals]
         static_tensor[0, i] = torch.tensor(val)
 
     meta_data_tensor = torch.zeros((1, len(meta_data_feature_list)))
