@@ -205,7 +205,7 @@ def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None,
             logger.warning("[%s] candidate missing '%s', using flag_value", ztf_id, key)
         prv_cand[key] = _coerce(candidate.get(key, flag_value), flag_value, ztf_id, key, "candidate")
 
-    ts_tensor = torch.zeros((1, len(prv_cand), len(time_dependent_feature_list) + 1))
+    ts_tensor = torch.ones((1, len(prv_cand), len(time_dependent_feature_list) + 1))
     for i, col in enumerate(time_dependent_feature_list):
         if col not in prv_cand.columns:
             logger.warning("[%s] time-dependent feature '%s' missing from prv_candidates", ztf_id, col)
@@ -240,6 +240,8 @@ def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None,
         val = prv_cand[col].values[-1]
         if pd.isna(val):
             logger.warning("[%s] meta-data feature '%s' is NaN at last row", ztf_id, col)
+        if val == -999:
+            val = flag_value
         meta_data_tensor[0, i] = torch.tensor(val)
 
     length = torch.tensor([len(prv_cand)])
