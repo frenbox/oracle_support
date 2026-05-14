@@ -103,7 +103,7 @@ def get_taxonomy():
 
 
 def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None,
-               max_history_days=180):
+               max_history_days=1024):
     """Run Oracle BTSv2-pro (omni) classification on a ZTF alert.
 
     Args:
