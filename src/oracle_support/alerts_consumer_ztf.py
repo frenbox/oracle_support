@@ -22,6 +22,7 @@ MODEL_TITLE = "Oracle Omni"
 FRITZ_BASE_URL = "https://fritz.science"
 RESULTS_CSV = Path("results") / "oracle_ztf_results.csv"
 POST_TO_SLACK = False  # Slack updates paused; flip to True to re-enable.
+FRITZ_GROUP_IDS = [1959]  # Oracle Omni Beta — annotation visibility scope.
 
 logging.basicConfig(
     level=logging.INFO,
@@ -323,7 +324,8 @@ def consume():
                 _append_csv(ztf_id, class_probs, fritz_classifications)
 
                 try:
-                    annotation_id = annotate_fritz(class_probs, ztf_id, get_taxonomy())
+                    annotation_id = annotate_fritz(class_probs, ztf_id, get_taxonomy(),
+                                                   group_ids=FRITZ_GROUP_IDS)
                     logger.info("[%s] Fritz annotation: %s", ztf_id, annotation_id)
                 except Exception:
                     logger.exception("[%s] Fritz annotation failed", ztf_id)
