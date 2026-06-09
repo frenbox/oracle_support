@@ -21,6 +21,7 @@ FILTER_NAME = "rcfdeep_partnership_ztf"
 MODEL_TITLE = "Oracle Omni"
 FRITZ_BASE_URL = "https://fritz.science"
 RESULTS_CSV = Path("results") / "oracle_ztf_results.csv"
+POST_TO_SLACK = False  # Slack updates paused; flip to True to re-enable.
 
 logging.basicConfig(
     level=logging.INFO,
@@ -118,6 +119,99 @@ def _fritz_url(ztf_id):
     except Exception:
         logger.debug("[%s] Fritz source check failed, falling back to alerts URL", ztf_id)
     return f"{FRITZ_BASE_URL}/alerts/ztf/{ztf_id}"
+
+
+def _ordered_class_probs(class_probs, taxonomy):
+    """Order probabilities as a pre-order walk of the taxonomy tree.
+
+    Each parent is immediately followed by its subclasses (Persistent → AGN,
+    CV, Varstar; Transient → SN-Ia, SN-II, SN-Ib/c, SLSN). The root node
+    ("Alert") is dropped. Any probability keys not found in the taxonomy are
+    appended at the end in their original order (defensive).
+    """
+    order = []
+
+    def _walk(node):
+        for child in taxonomy.successors(node):
+            order.append(child)
+            _walk(child)
+
+    _walk(taxonomy.root_label)
+    ordered = {n: class_probs[n] for n in order if n in class_probs}
+    for k, v in class_probs.items():
+        if k not in ordered and k != taxonomy.root_label:
+            ordered[k] = v
+    return ordered
+
+
+def _get_annotation_id(ztf_id, origin, headers):
+    """Fetch the annotation ID for a source by origin, or None."""
+    endpoint = f"{FRITZ_BASE_URL}/api/sources/{ztf_id}/annotations"
+    try:
+        resp_json = requests.get(endpoint, headers=headers, timeout=10).json()
+        if resp_json.get("status") == "success":
+            for ann in resp_json.get("data", []):
+                if ann.get("origin") == origin:
+                    return ann.get("annotation_id") or ann.get("id")
+    except Exception:
+        logger.exception("[%s] Failed to fetch existing annotations", ztf_id)
+    return None
+
+
+def annotate_fritz(class_probs, ztf_id, taxonomy, origin="oracle_omni",
+                   group_ids=None, previous_annotation_id=None):
+    """Post (or update) per-class probability annotations on Fritz.
+
+    The probability dict is ordered as a pre-order tree walk (Persistent and
+    its subclasses, then Transient and its classes) with the root "Alert"
+    field dropped. On a duplicate-origin POST failure, falls back to fetching
+    the existing annotation and updating it via PUT.
+
+    Returns the annotation_id of the created/updated annotation, or None.
+    """
+    fritz_token = os.getenv("FRITZ_TOKEN")
+    if not fritz_token:
+        logger.warning("[%s] FRITZ_TOKEN not set, skipping annotation", ztf_id)
+        return None
+
+    headers = {
+        "Authorization": f"token {fritz_token}",
+        "Content-Type": "application/json",
+    }
+
+    data = {
+        k: float(v) if isinstance(v, (int, float)) else v
+        for k, v in _ordered_class_probs(class_probs, taxonomy).items()
+    }
+    payload = {"origin": origin, "data": data}
+    if group_ids is not None:
+        payload["group_ids"] = group_ids
+
+    base = f"{FRITZ_BASE_URL}/api/sources/{ztf_id}/annotations"
+    if previous_annotation_id is not None:
+        response = requests.put(f"{base}/{previous_annotation_id}", json=payload,
+                                headers=headers, timeout=10)
+    else:
+        response = requests.post(base, json=payload, headers=headers, timeout=10)
+
+    resp_json = response.json()
+    if resp_json.get("status") == "success":
+        data_resp = resp_json.get("data", {})
+        logger.info("[%s] Annotation saved.", ztf_id)
+        return data_resp.get("annotation_id") or data_resp.get("id")
+
+    # POST likely failed due to duplicate origin — fetch existing and PUT.
+    logger.warning("[%s] Annotation POST failed: %s", ztf_id, resp_json.get("message"))
+    if previous_annotation_id is None:
+        existing_id = _get_annotation_id(ztf_id, origin, headers)
+        if existing_id is not None:
+            retry = requests.put(f"{base}/{existing_id}", json=payload,
+                                 headers=headers, timeout=10).json()
+            if retry.get("status") == "success":
+                logger.info("[%s] Annotation updated via fallback PUT.", ztf_id)
+                return existing_id
+            logger.error("[%s] Fallback PUT failed: %s", ztf_id, retry.get("message"))
+    return None
 
 
 def read_avro(msg):
@@ -228,12 +322,20 @@ def consume():
                 fritz_classifications = _fritz_classifications(ztf_id)
                 _append_csv(ztf_id, class_probs, fritz_classifications)
 
+                try:
+                    annotation_id = annotate_fritz(class_probs, ztf_id, get_taxonomy())
+                    logger.info("[%s] Fritz annotation: %s", ztf_id, annotation_id)
+                except Exception:
+                    logger.exception("[%s] Fritz annotation failed", ztf_id)
+
                 fritz_block = _format_fritz_block(fritz_classifications)
                 logger.info("[%s] classification:\n%s",
                             ztf_id, format_message(ztf_id, class_probs, title=MODEL_TITLE,
                                                    link=link, extra_text=fritz_block))
 
-                if not fritz_classifications:
+                if not POST_TO_SLACK:
+                    logger.debug("[%s] Slack posting disabled, skipping", ztf_id)
+                elif not fritz_classifications:
                     logger.info("[%s] no Fritz classification, skipping Slack post", ztf_id)
                 else:
                     try:
