@@ -118,7 +118,7 @@ def _fritz_url(ztf_id):
         if r.status_code == 200 and r.json().get("status") == "success":
             return f"{FRITZ_BASE_URL}/source/{ztf_id}"
     except Exception:
-        logger.debug("[%s] Fritz source check failed, falling back to alerts URL", ztf_id)
+        logger.info("[%s] Fritz source check failed, falling back to alerts URL", ztf_id)
     return f"{FRITZ_BASE_URL}/alerts/ztf/{ztf_id}"
 
 
@@ -160,13 +160,13 @@ def _get_annotation_id(ztf_id, origin, headers):
 
 
 def annotate_fritz(class_probs, ztf_id, taxonomy, origin="oracle_omni",
-                   group_ids=None, previous_annotation_id=None):
+                   group_ids=None):
     """Post (or update) per-class probability annotations on Fritz.
 
     The probability dict is ordered as a pre-order tree walk (Persistent and
     its subclasses, then Transient and its classes) with the root "Alert"
-    field dropped. On a duplicate-origin POST failure, falls back to fetching
-    the existing annotation and updating it via PUT.
+    field dropped. POSTs a new annotation; on a duplicate-origin failure,
+    falls back to fetching the existing annotation and updating it via PUT.
 
     Returns the annotation_id of the created/updated annotation, or None.
     """
@@ -189,13 +189,12 @@ def annotate_fritz(class_probs, ztf_id, taxonomy, origin="oracle_omni",
         payload["group_ids"] = group_ids
 
     base = f"{FRITZ_BASE_URL}/api/sources/{ztf_id}/annotations"
-    if previous_annotation_id is not None:
-        response = requests.put(f"{base}/{previous_annotation_id}", json=payload,
-                                headers=headers, timeout=10)
-    else:
-        response = requests.post(base, json=payload, headers=headers, timeout=10)
+    try:
+        resp_json = requests.post(base, json=payload, headers=headers, timeout=10).json()
+    except (requests.RequestException, ValueError):
+        logger.exception("[%s] Annotation POST request failed", ztf_id)
+        return None
 
-    resp_json = response.json()
     if resp_json.get("status") == "success":
         data_resp = resp_json.get("data", {})
         logger.info("[%s] Annotation saved.", ztf_id)
@@ -203,15 +202,18 @@ def annotate_fritz(class_probs, ztf_id, taxonomy, origin="oracle_omni",
 
     # POST likely failed due to duplicate origin — fetch existing and PUT.
     logger.warning("[%s] Annotation POST failed: %s", ztf_id, resp_json.get("message"))
-    if previous_annotation_id is None:
-        existing_id = _get_annotation_id(ztf_id, origin, headers)
-        if existing_id is not None:
+    existing_id = _get_annotation_id(ztf_id, origin, headers)
+    if existing_id is not None:
+        try:
             retry = requests.put(f"{base}/{existing_id}", json=payload,
                                  headers=headers, timeout=10).json()
-            if retry.get("status") == "success":
-                logger.info("[%s] Annotation updated via fallback PUT.", ztf_id)
-                return existing_id
-            logger.error("[%s] Fallback PUT failed: %s", ztf_id, retry.get("message"))
+        except (requests.RequestException, ValueError):
+            logger.exception("[%s] Annotation PUT request failed", ztf_id)
+            return None
+        if retry.get("status") == "success":
+            logger.info("[%s] Annotation updated via fallback PUT.", ztf_id)
+            return existing_id
+        logger.error("[%s] Fallback PUT failed: %s", ztf_id, retry.get("message"))
     return None
 
 
@@ -269,7 +271,7 @@ def consume():
                 FILTER_NAME in f["filter_name"] for f in record.get("filters") or []
             )
             if not passes_filter:
-                logger.debug("[%s] did not pass %s, skipping", ztf_id, FILTER_NAME)
+                logger.info("[%s] did not pass %s, skipping", ztf_id, FILTER_NAME)
                 total_consumed += 1
                 consumer.commit(message=msg)
                 continue
@@ -336,7 +338,7 @@ def consume():
                                                    link=link, extra_text=fritz_block))
 
                 if not POST_TO_SLACK:
-                    logger.debug("[%s] Slack posting disabled, skipping", ztf_id)
+                    logger.info("[%s] Slack posting disabled, skipping", ztf_id)
                 elif not fritz_classifications:
                     logger.info("[%s] no Fritz classification, skipping Slack post", ztf_id)
                 else:
