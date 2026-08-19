@@ -22,7 +22,7 @@ MODEL_TITLE = "Oracle Omni"
 FRITZ_BASE_URL = "https://fritz.science"
 RESULTS_CSV = Path("results") / "oracle_ztf_results.csv"
 POST_TO_SLACK = False  # Slack updates paused; flip to True to re-enable.
-FRITZ_GROUP_IDS = [1959]  # Oracle Omni Beta — annotation visibility scope.
+FRITZ_GROUP_IDS = None  # None = sitewide visibility (no group scoping).
 
 logging.basicConfig(
     level=logging.INFO,
