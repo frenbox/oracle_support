@@ -32,6 +32,18 @@ def _coerce(value, default, ztf_id, field, source):
         pass
     return value
 
+
+def _wise_color(m1, m2):
+    """m1 - m2, or flag_value if either magnitude is missing.
+
+    Training maps a missing WISE color to flag_value; subtracting two
+    flag_value magnitudes would instead give 0.
+    """
+    for m in (m1, m2):
+        if not isinstance(m, (int, float)) or m == flag_value:
+            return flag_value
+    return m1 - m2
+
 from oracle.architectures import GRU_MD_MM_Improved
 from oracle.custom_datasets.BTS import (
     ZTF_passband_to_wavelengths,
@@ -192,8 +204,8 @@ def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None,
     prv_cand["W2mag"] = w2
     prv_cand["W3mag"] = w3
     prv_cand["W4mag"] = w4
-    prv_cand["W1_minus_W3"] = w1 - w3 if isinstance(w1, (int, float)) and isinstance(w3, (int, float)) else flag_value
-    prv_cand["W2_minus_W3"] = w2 - w3 if isinstance(w2, (int, float)) and isinstance(w3, (int, float)) else flag_value
+    prv_cand["W1_minus_W3"] = _wise_color(w1, w3)
+    prv_cand["W2_minus_W3"] = _wise_color(w2, w3)
 
     for key in [
         "sgscore1", "sgscore2", "distpsnr1", "distpsnr2",
