@@ -33,12 +33,17 @@ def _coerce(value, default, ztf_id, field, source):
     return value
 
 
-def _wise_color(m1, m2):
-    """m1 - m2, or flag_value if either magnitude is missing.
+def _wise_color(m1, m2, all_missing):
+    """A WISE colour matching the training convention, which has two missing cases.
 
-    Training maps a missing WISE color to flag_value; subtracting two
-    flag_value magnitudes would instead give 0.
+    No WISE source at all: add_wise_columns writes the flag into all four
+    magnitudes, and the training colour is the raw subtraction flag - flag = 0.0.
+    A source found with one band unmeasured: that band is NaN in the training
+    parquet, so the colour becomes NaN and is mapped to flag_value. Reproduce both:
+    all four bands missing -> 0.0; otherwise, a missing band in this colour -> flag.
     """
+    if all_missing:
+        return 0.0
     for m in (m1, m2):
         if not isinstance(m, (int, float)) or m == flag_value:
             return flag_value
@@ -204,8 +209,11 @@ def run_oracle(ztf_id, prv_candidates, candidate, cross_matches, cutouts=None,
     prv_cand["W2mag"] = w2
     prv_cand["W3mag"] = w3
     prv_cand["W4mag"] = w4
-    prv_cand["W1_minus_W3"] = _wise_color(w1, w3)
-    prv_cand["W2_minus_W3"] = _wise_color(w2, w3)
+    # No WISE match at all -> every band is the flag -> colours are 0.0 (the training
+    # convention); a match with a masked band -> that colour is the flag.
+    all_wise_missing = all(m == flag_value for m in (w1, w2, w3, w4))
+    prv_cand["W1_minus_W3"] = _wise_color(w1, w3, all_wise_missing)
+    prv_cand["W2_minus_W3"] = _wise_color(w2, w3, all_wise_missing)
 
     for key in [
         "sgscore1", "sgscore2", "distpsnr1", "distpsnr2",
